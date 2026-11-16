@@ -1,0 +1,66 @@
+LE NGUU (Site Web)
+│
+├── 🏠 PAGE D'ACCUEIL (app/page.tsx)
+│   │
+│   ├── La Une (Le 1er article principal, souvent le plus récent)
+│   ├── Les 4 blocs (Les 4 articles suivants les plus récents, toutes rubriques confondues)
+│   └── Le bas de page (Décryptage + À ne pas manquer + Footer)
+│
+│
+├── 📂 RUBRIQUE : POLITIQUE (app/politique/page.tsx)
+│   │   (Cette page affiche TOUS les articles de politique)
+│   │
+│   ├── Article 1 (Le plus récent) ➔ S'affiche en GRAND (en haut de la page)
+│   ├── Article 2 ➔ S'affiche en petit (en dessous)
+│   └── Article 3 ➔ S'affiche en petit (en dessous)
+│
+│
+├── 📂 RUBRIQUE : SPORT (app/sport/page.tsx)
+│   │   (Cette page affiche TOUS les articles de sport)
+│   │
+│   ├── Article A (Le plus récent) ➔ S'affiche en GRAND
+│   ├── Article B (Basket) ➔ S'affiche en petit
+│   └── Article C (CAN 2027) ➔ S'affiche en petit
+│
+│
+├── 📂 RUBRIQUE : ÉDUCATION (app/education/page.tsx)
+│   │
+│   ├── Article D (Université) ➔ S'affiche en GRAND
+│   └── Article E (Bac) ➔ S'affiche en petit
+│
+│
+└── 📂 RUBRIQUE : ÉCONOMIE, SOCIÉTÉ, SANTÉ, DIASPORA, MONDE, DÉCRYPTAGE...
+    (Même principe : chaque dossier a sa page qui liste ses articles)
+
+
+======================================================================
+💡 COMMENT ON VA STRUCTURER LES DOSSIERS (dans VS Code)
+======================================================================
+
+app/
+├── page.tsx                      <-- La page d'accueil globale
+├── Header.tsx                    <-- Le menu en haut
+│
+├── politique/                    <-- Dossier Rubrique
+│   ├── page.tsx                  <-- La page qui liste les articles Politique
+│   └── etat-armee-peuple/        <-- Dossier Article
+│       └── page.tsx              <-- Le texte de l'article (L'État, l'armée...)
+│
+├── sport/                        <-- Dossier Rubrique Sport
+│   ├── page.tsx                  <-- La page qui liste les articles Sport
+│   ├── football-comorien/        <-- Article A
+│   │   └── page.tsx
+│   ├── championnat-basket/        <-- Article B
+│   │   └── page.tsx
+│   └── can-2027/                 <-- Article C
+│       └── page.tsx
+│
+├── education/                    <-- Dossier Rubrique Éducation
+│   ├── page.tsx                  <-- La page qui liste les articles Éducation
+│   ├── universites-comores/      <-- Article D
+│   │   └── page.tsx
+│   └── bac-2026/                 <-- Article E
+│       └── page.tsx
+│
+└── economie/
+    └── ... (etc.)

@@ -1,0 +1,394 @@
+/* =========================================================
+   PAGE FOOTBALL — préfixe fb- pour ne rien casser ailleurs
+   Couleurs : vert Le Nguu par défaut, et couleur de l'île
+   (Ngazidja bleu, Ndzuani rouge, Mwali jaune) via les variables
+   --fb-c (couleur), --fb-cd (version foncée), --fb-on (texte dessus)
+   ========================================================= */
+
+.fb {
+  --fb-c: var(--green);
+  --fb-cd: var(--green);
+  --fb-on: #ffffff;
+}
+
+.fb-band {
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 24px;
+  margin: 24px 0 18px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  flex-wrap: wrap;
+}
+.fb-band h1 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 1.1;
+}
+.fb-band em {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 17px;
+  opacity: .92;
+}
+
+/* ----- Onglets principaux : Championnat / Coupes ----- */
+.fb-sections {
+  display: flex;
+  border-bottom: 2px solid var(--rule);
+}
+.fb-sections button {
+  flex: 1;
+  max-width: 280px;
+  padding: 14px 18px;
+  background: none;
+  border: 0;
+  border-bottom: 4px solid transparent;
+  margin-bottom: -2px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--mute);
+  cursor: pointer;
+}
+.fb-sections button.on {
+  color: var(--green);
+  border-bottom-color: var(--green2);
+}
+
+.fb-panel { padding: 22px 0 10px; }
+
+/* ----- Sélecteurs (niveau, île, division) ----- */
+.fb-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.fb-pills button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 18px;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-bottom: 3px solid var(--rule);
+  border-radius: 4px;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
+  cursor: pointer;
+}
+.fb-pills button small {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--mute);
+}
+/* Les boutons d'île portent la couleur de leur île */
+.fb-pills button.isl { border-bottom-color: var(--fb-c); }
+.fb-pills button.on {
+  background: var(--fb-c);
+  border-color: var(--fb-c);
+  color: var(--fb-on);
+}
+.fb-pills button.on small { color: inherit; opacity: .85; }
+
+/* ----- Titres et textes ----- */
+.fb-h3 {
+  margin: 28px 0 12px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--fb-cd);
+}
+.fb-intro {
+  margin: 0 0 14px;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 17px;
+  color: var(--mute);
+  max-width: 640px;
+}
+.fb-empty {
+  padding: 22px;
+  background: var(--paper);
+  border: 1px dashed var(--rule);
+  color: var(--mute);
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Bandeau champion / tenant du titre */
+.fb-champ {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 0 16px;
+  padding: 12px 20px;
+  background: var(--paper);
+  border-left: 5px solid var(--green2);
+}
+.fb-champ span { font-size: 13px; color: var(--mute); font-weight: 600; }
+.fb-champ strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  color: var(--ink);
+}
+
+/* =========================================================
+   CARTE DE CLASSEMENT
+   ========================================================= */
+.fb-card {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+/* En-tête aux couleurs de l'île, liseré vert Le Nguu en dessous */
+.fb-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding: 18px 22px 16px;
+  background: var(--fb-c);
+  color: var(--fb-on);
+  border-bottom: 4px solid var(--green);
+}
+.fb-card-kicker {
+  display: block;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .88;
+}
+.fb-card-head h3 {
+  margin: 4px 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1.1;
+  color: inherit;
+}
+.fb-card-head em {
+  padding: 5px 16px;
+  border-radius: 99px;
+  background: rgba(0,0,0,.16);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.fb-card-empty {
+  margin: 0;
+  padding: 36px 20px;
+  text-align: center;
+  color: var(--mute);
+  font-size: 16px;
+}
+
+.fb-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.fb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 16px;
+  color: var(--ink);
+}
+.fb-table th {
+  background: var(--paper);
+  color: var(--green);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: .04em;
+  padding: 10px 6px;
+  text-align: center;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--fb-c);
+}
+.fb-table td {
+  padding: 6px;
+  text-align: center;
+  border-bottom: 1px solid var(--soft);
+}
+.fb-table tbody tr:nth-child(even) { background: var(--paper); }
+
+.fb-table .fb-pos { width: 46px; font-weight: 800; color: var(--fb-cd); }
+.fb-table .fb-logo-cell { width: 48px; padding: 4px; }
+.fb-table .fb-club { text-align: left; font-weight: 700; min-width: 160px; }
+.fb-table th.fb-club { padding-left: 4px; }
+.fb-table .fb-pts { font-weight: 800; font-size: 18px; }
+.fb-table th.fb-pts { font-size: 13px; }
+
+.fb-logo, .fb-logo-fallback {
+  display: block;
+  width: 34px; height: 34px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #fff;
+}
+.fb-logo { object-fit: contain; }
+.fb-logo-fallback {
+  display: flex; align-items: center; justify-content: center;
+  background: #e9e5da; color: var(--green);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 800; font-size: 12px;
+}
+
+/* Zones : vert = champion, orange = barrage, rouge foncé = relégation */
+.fb-table tbody tr.fb-z-up { background: #e3f5e8; }
+.fb-table tbody tr.fb-z-mid { background: #fdebd6; }
+.fb-table tbody tr.fb-z-down { background: #f8dcdc; }
+.fb-table tr.fb-z-up td:first-child { box-shadow: inset 5px 0 0 #1f8a3c; color: #14692c; }
+.fb-table tr.fb-z-mid td:first-child { box-shadow: inset 5px 0 0 #e8862a; color: #a8560a; }
+.fb-table tr.fb-z-down td:first-child { box-shadow: inset 5px 0 0 #a61c1c; color: #8f1a1a; }
+
+/* "−1" = match en moins, rouge devant les MJ */
+.fb-late {
+  margin-right: 5px;
+  color: #b42318;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+/* Pied de carte : légende sur fond vert Le Nguu */
+.fb-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 18px;
+  padding: 12px 18px;
+  background: var(--green);
+  color: #e6efe9;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 13px;
+}
+.fb-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.fb-card-foot .fb-late { color: #ffb4a9; margin-right: 4px; }
+.fb-foot-right { font-weight: 700; opacity: .9; }
+.fb-dot {
+  display: inline-block;
+  width: 11px; height: 11px;
+  margin-right: 6px;
+  border-radius: 2px;
+  vertical-align: -1px;
+}
+.fb-dot-up { background: #2fb34f; }
+.fb-dot-mid { background: #f0954a; }
+.fb-dot-down { background: #c93434; }
+
+/* ----- Matchs / tours de coupe ----- */
+.fb-round { margin-bottom: 18px; }
+.fb-round h4 {
+  margin: 0 0 6px;
+  padding: 6px 12px;
+  background: var(--soft);
+  border-left: 4px solid var(--fb-c);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  color: var(--fb-cd);
+}
+.fb-round ul { list-style: none; margin: 0; padding: 0; }
+.fb-match {
+  display: grid;
+  grid-template-columns: 130px 1fr 76px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--soft);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 16px;
+}
+.fb-date { font-size: 13px; color: var(--mute); }
+.fb-home { text-align: right; font-weight: 600; }
+.fb-away { text-align: left; font-weight: 600; }
+.fb-score {
+  text-align: center;
+  background: var(--fb-cd);
+  color: #fff;
+  font-weight: 800;
+  padding: 4px 0;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.fb-score.fb-todo { background: var(--soft); color: var(--mute); }
+.fb-pens {
+  grid-column: 2 / 5;
+  justify-self: center;
+  font-size: 12px;
+  color: var(--mute);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 768px) {
+  .fb-band { margin: 0 -16px 14px; padding: 14px 16px; }
+  .fb-band h1 { font-size: 26px; }
+  .fb-band em { font-size: 14px; }
+
+  .fb-sections button {
+    max-width: none;
+    padding: 12px 6px;
+    font-size: 16px;
+  }
+  .fb-panel { padding-top: 16px; }
+
+  /* Sélecteurs défilants plutôt que sur plusieurs lignes */
+  .fb-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    margin: 0 -16px 16px;
+    padding: 0 16px 2px;
+    scrollbar-width: none;
+  }
+  .fb-pills::-webkit-scrollbar { display: none; }
+  .fb-pills button { flex: none; padding: 7px 14px; font-size: 14px; }
+
+  .fb-h3 { font-size: 20px; margin: 22px 0 10px; }
+  .fb-intro { font-size: 15px; }
+
+  /* La carte occupe toute la largeur de l'écran */
+  .fb-card { margin: 0 -16px; border-radius: 0; border-left: 0; border-right: 0; }
+  .fb-card-head { padding: 14px 14px 12px; }
+  .fb-card-kicker { font-size: 11px; letter-spacing: .1em; }
+  .fb-card-head h3 { font-size: 22px; }
+  .fb-card-head em { font-size: 12px; padding: 4px 12px; }
+
+  .fb-hide-sm { display: none; }
+  .fb-table { font-size: 14px; }
+  .fb-table th { font-size: 11px; padding: 8px 3px; }
+  .fb-table td { padding: 6px 3px; }
+  .fb-table .fb-pos { width: 28px; }
+  .fb-table .fb-logo-cell { width: 36px; padding: 3px; }
+  .fb-logo, .fb-logo-fallback { width: 28px; height: 28px; font-size: 10px; }
+  .fb-table .fb-club { min-width: 0; line-height: 1.15; }
+  .fb-table .fb-pts { font-size: 16px; }
+  .fb-late { margin-right: 3px; font-size: 10px; }
+  .fb-card-foot { padding: 10px 14px; font-size: 12px; }
+
+  /* Match : date au-dessus, équipes et score sur une ligne */
+  .fb-match {
+    grid-template-columns: 1fr 64px 1fr;
+    gap: 4px 6px;
+    padding: 10px 0;
+    font-size: 15px;
+  }
+  .fb-date { grid-column: 1 / 4; text-align: center; }
+  .fb-pens { grid-column: 1 / 4; }
+}
