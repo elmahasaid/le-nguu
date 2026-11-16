@@ -7,7 +7,7 @@ auteur: "Houdaidjy Said Ali"
 fonction: "Juriste Publiciste Internationaliste"
 date: "2026-11-13"
 image: "/iran-israel.png"
-legende: "Siège de l’ONU, à Genève (Suisse). LP / Photo d'illustration"
+legende: "© Houdaidjy Said Ali — Palais des Nations, 14 avenue de la Paix, 1211 Genève, Suisse, 13 novembre 2026."
 une: true
 ---
 
@@ -53,6 +53,6 @@ La désignation de Gadi Eisenkot et la nouvelle majorité démocrate au Congrès
 
 <div class="article-signature">
   <strong>HOUDAIDJY SAID ALI</strong><br />
-  Juriste Publiciste Internationaliste<br />
+  Juriste Publiciste et Internationaliste<br />
   Genève – Suisse
 </div>

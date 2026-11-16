@@ -7,7 +7,7 @@ auteur: "Houdaidjy Said Ali"
 fonction: "Juriste publiciste et internationaliste"
 date: "2026-11-16"
 image: "/le-prix-de-la-pensee.png"
-legende: "Photo d'illustration"
+legende: "© Houdaidjy Said Ali — Librairie de Paris, 7-11 place de Clichy, 75017 Paris, 16 novembre 2026."
 
 ---
 
