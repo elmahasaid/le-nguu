@@ -1,0 +1,29 @@
+/* =========================================================
+   PAGE BASKET — s'appuie sur football.css (fb-…) et ajoute
+   l'identité basket : liseré orange, ballon, moyenne colorée.
+   ========================================================= */
+
+/* Bandeau du haut : même fond que le football + liseré orange */
+.bk-band { border-left: 6px solid #e8862a; }
+
+/* En-tête des cartes : couleur de l'île, liseré orange (couleur du ballon) */
+.bk .fb-card-head { border-bottom-color: #e8862a; }
+.bk-head-right { display: flex; align-items: center; gap: 12px; }
+.bk-ball { flex: none; opacity: .92; }
+
+/* Points average : vert si positif, rouge si négatif */
+.bk-avg-pos { color: #14692c; font-weight: 700; }
+.bk-avg-neg { color: #b42318; font-weight: 700; }
+
+/* Résultats : le vainqueur est en gras plus marqué */
+.bk-win { font-weight: 800; color: var(--ink, #0f1012); }
+.bk .fb-home:not(.bk-win),
+.bk .fb-away:not(.bk-win) { font-weight: 500; }
+
+/* Mention des colonnes sous le tableau */
+.bk .fb-legend span:last-child:not(:only-child) { opacity: .9; }
+
+@media (max-width: 768px) {
+  .bk-ball { width: 24px; height: 24px; }
+  .bk-head-right { gap: 8px; }
+}

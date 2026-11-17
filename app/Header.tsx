@@ -25,7 +25,7 @@ export default function Header() {
         <div className="in">
           <em>Informer · Éclairer · Rassembler</em>
           <div className="tr">
-            <span>📅 Vendredi 13 novembre 2026</span>
+            
             <label className="srch">
               🔍 <input type="search" placeholder="Rechercher…" />
             </label>

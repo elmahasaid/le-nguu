@@ -95,15 +95,23 @@ export default function ArticleLayout({
           {/* ---------- COLONNE LATÉRALE ---------- */}
           <div className="ar-side" role="complementary" aria-label="Services et partenaires">
             <section className="ar-block">
-              <h2 className="ar-block-title">Découvrez JUWU.FR</h2>
-              <p className="ar-block-text">La boutique en ligne des Comores.</p>
+              <h2 className="ar-block-title">JUWU · SPORTSWEAR</h2>
+              <p className="ar-block-text">Affirme ton style, joue ton jeu.</p>
               <a
                 href="https://www.juwu.fr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ar-btn ar-btn-line"
               >
-                Visiter la boutique
+                Découvrir la collection
+              </a>
+            </section>
+
+             <section className="ar-block">
+              <h2 className="ar-block-title">Soutenir Le Nguu</h2>
+              <p className="ar-block-text">Aidez-nous à rester indépendants.</p>
+              <a href="#" className="ar-btn ar-btn-solid">
+                Faire un don
               </a>
             </section>
 
@@ -120,13 +128,7 @@ export default function ArticleLayout({
               </a>
             </section>
 
-            <section className="ar-block">
-              <h2 className="ar-block-title">Soutenir Le Nguu</h2>
-              <p className="ar-block-text">Aidez-nous à rester indépendants.</p>
-              <a href="#" className="ar-btn ar-btn-solid">
-                Faire un don
-              </a>
-            </section>
+           
 
             <WeatherWidget />
           </div>

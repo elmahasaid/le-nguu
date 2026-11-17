@@ -118,7 +118,14 @@ export const LEAGUES: Record<Island, Division[]> = {
         Volcan Club        | 4 | 1 | 0 | 3 | 2 | 5
         Fekandza Club      | 4 | 1 | 0 | 3 | 2 | 6
       `,
-      matches: ``,
+      matches: `
+        4e journée | Sam. 14 nov. | FC Malé            | 1-1 | US Zilimadjou
+        4e journée | Sam. 14 nov. | Atomic Ngomé       | 2-3 | Etoile des Comores
+        4e journée | Sam. 14 nov. | Volcan Club        | 0-2 | Djabal FC
+        4e journée | Sam. 14 nov. | Fekandza Club      | 2-1 | Angelus Club
+        4e journée | Sam. 14 nov. | Amical Club        | 1-1 | FC Hantsindzi
+        4e journée | Sam. 14 nov. | FC Chouani         | 0-0 | Elan Club
+      `,
       zones: [
         { from: 1, type: "up", label: "Champion" },
         { from: 10, type: "mid", label: "Barrage de maintien contre le 3e de la Division 2" },
@@ -149,7 +156,17 @@ export const LEAGUES: Record<Island, Division[]> = {
         Kaz Club            | 4 | 0 | 2 | 2 | 4 | 8
         Coin Nord           | 4 | 0 | 1 | 3 | 3 | 8
       `,
-      matches: ``,
+      matches: `
+        4e journée | Dim. 15 nov. | Kaz Club            | 1-1 | FC Mvoumbari
+        4e journée | Dim. 15 nov. | Coin Nord           | 1-2 | Enfants des Comores
+        4e journée | Dim. 15 nov. | Petit Harlem        | 2-0 | FC Mdjoiezi
+        4e journée | Dim. 15 nov. | JACM                | 4-0 | Twamaya Club
+        4e journée | Dim. 15 nov. | Ngaya Club          | 3-0 | Asim Club
+        4e journée | Dim. 15 nov. | US Selea            | 5-2 | Avenir Club
+        4e journée | Dim. 15 nov. | FC Mlaouni          | 0-2 | FC Mtsamdou
+        4e journée | Dim. 15 nov. | Dynamo Club Chamlé  | 0-2 | Alizé Fort
+        4e journée | Dim. 15 nov. | US Mbeni            | 1-0 | AJSD Club
+      `,
       zones: [
         { from: 1, to: 2, type: "up", label: "Promus en 1re division" },
         { from: 3, type: "up2", label: "Barrage du 3e contre le 10e de la D1" },
@@ -208,14 +225,14 @@ export const LEAGUES: Record<Island, Division[]> = {
         Ouragan Club      | 4 | 1 | 2 | 1 | - | - |  5 | 0
         Belle Lumière     | 4 | 1 | 1 | 2 | - | - |  4 | -1
         Mbatsé Club       | 4 | 0 | 3 | 1 | - | - |  3 | -2
-        US Wanani         | 4 | 1 | 0 | 3 | - | - |  3 | -3
-        Nouvel Espoir     | 3 | 0 | 1 | 2 | - | - |  1 | -3
+        Coca Bole         | 4 | 1 | 0 | 3 | - | - |  3 | -3
+        Sargonco          | 3 | 0 | 1 | 2 | - | - |  1 | -3
       `,
       matches: ``,
       zones: [
         { from: 1, type: "up", label: "Champion" },
-        { from: 6, type: "mid", label: "Barrage de maintien" },
-        { from: 7, to: 8, type: "down", label: "Relégation en Division 2" },
+        { from: 5, type: "mid", label: "Barrage de maintien" },
+        { from: 6, to: 8, type: "down", label: "Relégation en Division 2" },
       ],
     },
     blank("Division 2"),
@@ -239,7 +256,13 @@ export const NATIONAL_LEAGUE = {
 // =====================================================================
 // Phase régionale : une coupe par île (une ligne par match, voir le format plus haut)
 export const REGIONAL_CUPS: Record<Island, string> = {
-  ngazidja: ``,
+  // Pour un match décidé aux tirs au but, le dernier champ donne le score des t.a.b. (équipe de gauche d'abord)
+  ngazidja: `
+    Phase éliminatoire D2 | Ven. 6 nov. | Asim Club           | 0-0 | Coin Nord   | 7-6
+    Phase éliminatoire D2 | Ven. 6 nov. | Petit Harlem        | 4-0 | AJSD Club
+    Phase éliminatoire D2 | Ven. 6 nov. | US Mbeni            | 1-1 | FC Mtsamdou | 2-4
+    Phase éliminatoire D2 | Ven. 6 nov. | Enfants des Comores | 0-1 | US Selea
+  `,
   ndzuani: ``,
   mwali: ``,
 };

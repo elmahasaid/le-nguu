@@ -9,8 +9,8 @@ export default function Footer() {
           <h4>ACTUS SERVICES</h4>
           <ul>
             <li><a href="https://www.juwu.fr" target="_blank" rel="noopener noreferrer">JUWU.fr</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer">Bons plans</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer">Météo</a></li>
+            <li><a href="/bon-plans" target="_blank" rel="noopener noreferrer">Bons plans</a></li>
+            <li><a href="/meteo" target="_blank" rel="noopener noreferrer">Météo</a></li>
           </ul>
         </div>
 
@@ -19,9 +19,9 @@ export default function Footer() {
           <ul>
             <li><a href="/football" target="_blank" rel="noopener noreferrer">Championnat des Comores de foot</a></li>
             <li><a href="/football#coupes" target="_blank" rel="noopener noreferrer">Coupes des Comores</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer">Championnat de Basket</a></li>
+            <li><a href="/basket" target="_blank" rel="noopener noreferrer">Championnat des Comores de Basket</a></li>
             <li><a href="#" target="_blank" rel="noopener noreferrer">Équipe des Comores de football</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer">CAN 2027</a></li>
+            <li><a href="/can-2027" target="_blank" rel="noopener noreferrer">CAN 2027</a></li>
           </ul>
         </div>
 
@@ -66,14 +66,14 @@ export default function Footer() {
 
       <div className="footer-bottom">
 
-        <div className="legal-links">
+              <div className="legal-links">
           <span>INFORMATIONS LÉGALES LE NGUU</span>
-          <a href="#">Mentions légales</a>
-          <a href="#">Charte du Groupe</a>
-          <a href="#">Politique de confidentialité</a>
-          <a href="#">Gestion des cookies</a>
-          <a href="#">Conditions générales</a>
-          <a href="#">Aide (FAQ)</a>
+          <a href="/mentions-legales">Mentions légales</a>
+          <a href="/charte-du-groupe">Charte du Groupe</a>
+          <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+          <a href="/gestion-des-cookies">Gestion des cookies</a>
+          <a href="/conditions-generales">Conditions générales</a>
+          <a href="/aide">Aide (FAQ)</a>
         </div>
 
         {/* 👇 LOGOS RÉSEAUX SOCIAUX SANS TEXTE 👇 */}

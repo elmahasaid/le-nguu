@@ -140,10 +140,20 @@ export default function Home() {
       <div className="partner-banner">
         <div className="partner-container">
           <div className="partner-box">
-            <h4>Découvrez JUWU.FR</h4>
-            <p>Retrouvez vos produits préférés.</p>
+            <h4>JUWU – Vêtements de sport</h4>
+            <p>Découvrez nos maillots, tenues et collections sportives pour affirmer votre style sur et en dehors du terrain.</p>
             <a href="https://www.juwu.fr" target="_blank" rel="noopener noreferrer" className="partner-btn">
-              Visiter la boutique
+              Découvrir la collection
+            </a>
+          </div>
+
+          
+
+          <div className="partner-box">
+            <h4>Soutenir Le Nguu</h4>
+            <p>Aidez-nous à garder une information indépendante et de qualité.</p>
+            <a href="#" className="partner-btn highlight">
+              Faire un don
             </a>
           </div>
 
@@ -152,14 +162,6 @@ export default function Home() {
             <p>Soutenez l'éducation et l'avenir de la jeunesse comorienne.</p>
             <a href="https://www.nguzoyamsomo.fr" target="_blank" rel="noopener noreferrer" className="partner-btn">
               Découvrir l'association
-            </a>
-          </div>
-
-          <div className="partner-box">
-            <h4>Soutenir Le Nguu</h4>
-            <p>Aidez-nous à garder une information indépendante et de qualité.</p>
-            <a href="#" className="partner-btn highlight">
-              Faire un don
             </a>
           </div>
         </div>
