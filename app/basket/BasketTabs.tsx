@@ -21,7 +21,7 @@ import Round from "../Round";
 
 type Scope = "national" | Island;
 
-/** Variables CSS de couleur d'une île (bleu / rouge / jaune) */
+/** Variables CSS de couleur d'une île */
 const themeOf = (i: Island) =>
   ({
     "--fb-c": ISLANDS[i].color,
@@ -29,7 +29,7 @@ const themeOf = (i: Island) =>
     "--fb-on": ISLANDS[i].on,
   }) as React.CSSProperties;
 
-/** Le championnat national est en vert Le Nguu */
+/** Couleurs du championnat national */
 const nationalTheme = {
   "--fb-c": NATIONAL_THEME.color,
   "--fb-cd": NATIONAL_THEME.dark,
@@ -87,6 +87,8 @@ function ClubLogo({ name, size }: { name: string; size?: "m" }) {
   );
 }
 
+/* ---------- Classement basket ---------- */
+
 function BasketStandings({
   kicker,
   title,
@@ -109,7 +111,6 @@ function BasketStandings({
     return autoSort ? sortBasket(r) : r;
   }, [text, autoSort]);
 
-  // Les colonnes PM / PE / F ne s'affichent que si elles servent.
   const showPoints = rows.some((r) => r.pf !== null || r.pa !== null);
   const showForfeits = rows.some((r) => r.forfeits > 0);
 
@@ -163,7 +164,9 @@ function BasketStandings({
 
               <tbody>
                 {rows.map((r, i) => {
-                  const pos = r.rank ?? i + 1;
+                  // Position calculée à partir de l'ordre des lignes.
+                  // BasketStanding ne possède pas de propriété rank.
+                  const pos = i + 1;
                   const z = zoneFor(pos);
 
                   return (
@@ -181,7 +184,9 @@ function BasketStandings({
                       <td>{r.lost}</td>
 
                       {showForfeits && (
-                        <td className="fb-hide-sm">{r.forfeits || "–"}</td>
+                        <td className="fb-hide-sm">
+                          {r.forfeits || "–"}
+                        </td>
                       )}
 
                       {showPoints && (
@@ -288,7 +293,9 @@ function MatchList({ text, empty }: { text: string; empty: string }) {
               >
                 <span className="fb-date">{m.date}</span>
 
-                <span className={`fb-home fb-team${homeWon ? " bk-win" : ""}`}>
+                <span
+                  className={`fb-home fb-team${homeWon ? " bk-win" : ""}`}
+                >
                   <span>{m.home}</span>
                   <ClubLogo name={m.home} size="m" />
                 </span>
@@ -297,7 +304,9 @@ function MatchList({ text, empty }: { text: string; empty: string }) {
                   {played ? `${m.scoreHome} - ${m.scoreAway}` : "–"}
                 </span>
 
-                <span className={`fb-away fb-team${awayWon ? " bk-win" : ""}`}>
+                <span
+                  className={`fb-away fb-team${awayWon ? " bk-win" : ""}`}
+                >
                   <ClubLogo name={m.away} size="m" />
                   <span>{m.away}</span>
                 </span>
