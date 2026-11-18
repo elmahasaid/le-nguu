@@ -27,3 +27,73 @@
   .bk-ball { width: 24px; height: 24px; }
   .bk-head-right { gap: 8px; }
 }
+
+
+/* ---------- ROUND BASKET ---------- */
+
+.bk .fb-round {
+  width: 100%;
+  margin: 14px 0;
+  overflow: hidden;
+}
+
+.bk .fb-round-head {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+
+  border: none;
+  border-left: 6px solid var(--fb-c, #e8862a);
+  border-radius: 0;
+
+  background: color-mix(
+    in srgb,
+    var(--fb-c, #e8862a) 10%,
+    #e9e6dc
+  );
+
+  color: var(--fb-cd, #174a91);
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 750;
+  text-align: left;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.bk .fb-round-head:hover {
+  background: color-mix(
+    in srgb,
+    var(--fb-c, #e8862a) 17%,
+    #e9e6dc
+  );
+}
+
+.bk .fb-round-title {
+  flex: 1;
+}
+
+.bk .fb-round-count {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.bk .fb-round-head .fb-chevron {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.bk .fb-round.open .fb-chevron {
+  transform: rotate(180deg);
+}
+
+.bk .fb-round > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

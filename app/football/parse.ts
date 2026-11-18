@@ -5,9 +5,9 @@
 export interface Standing {
   club: string;
   played: number;
-  won: number;
-  drawn: number;
-  lost: number;
+  won: number | null; // null si inconnu
+  drawn: number | null;
+  lost: number | null;
   gf: number | null; // buts marqués (BM), null si inconnu
   ga: number | null; // buts encaissés (BE), null si inconnu
   diff: number; // différence de buts
@@ -22,6 +22,7 @@ export interface Match {
   scoreHome?: number;
   scoreAway?: number;
   pens?: string;
+  venue?: string; // stade, ex. "Stade de Moroni"
 }
 
 const SPLIT = /\t|\||;/; // séparateurs acceptés : | ou ; ou tabulation (copier-coller Excel)
@@ -34,6 +35,7 @@ const skip = (line: string) =>
  *   Équipe | MJ | V | N | D | BM | BE                 (Pts calculés : 3 par victoire, 1 par nul)
  *   Équipe | MJ | V | N | D | BM | BE | Pts           (Pts imposés, ex. retrait de points)
  *   Équipe | MJ | V | N | D | - | - | Pts | Diff      (buts inconnus : tirets, puis points et différence)
+ *   Équipe | MJ | - | - | - | - | - | Pts | Diff      (V, N, D inconnus aussi : tirets partout)
  * La première ligne peut être un en-tête (Équipe | MJ | V …) : elle est ignorée.
  */
 export function parseStandings(text: string): Standing[] {
@@ -52,8 +54,9 @@ export function parseStandings(text: string): Standing[] {
       return Number.isFinite(v) ? v : null;
     };
     const n = (i: number) => num(i) ?? 0;
-    const won = n(2);
-    const drawn = n(3);
+    const won = num(2);
+    const drawn = num(3);
+    const lost = num(4);
     const gf = num(5);
     const ga = num(6);
     const imposedDiff = num(8);
@@ -62,11 +65,11 @@ export function parseStandings(text: string): Standing[] {
       played: n(1),
       won,
       drawn,
-      lost: n(4),
+      lost,
       gf,
       ga,
       diff: imposedDiff ?? (gf !== null && ga !== null ? gf - ga : 0),
-      points: num(7) ?? won * 3 + drawn,
+      points: num(7) ?? (won ?? 0) * 3 + (drawn ?? 0),
     });
   }
   return rows;
@@ -76,6 +79,9 @@ export function parseStandings(text: string): Standing[] {
  * Format d'une ligne de match :
  *   Tour | Date | Équipe domicile | Score | Équipe extérieur
  *   Tour | Date | Équipe domicile | Score | Équipe extérieur | Tirs au but
+ *   Tour | Date | Équipe domicile | Score | Équipe extérieur | @Stade de Moroni
+ * - Après l'équipe extérieur, on peut ajouter : les tirs au but (ex. 4-3) et/ou le stade,
+ *   le stade étant précédé d'un @ (ex. @Stade d'Iconi). L'ordre n'a pas d'importance.
  * - Score : 2-1   (laisser "-" ou vide si le match n'est pas encore joué)
  * - Date  : texte libre, ex. "15 nov." ou "22 nov. 15h30"
  * - Les lignes ayant le même "Tour" se regroupent automatiquement.
@@ -87,7 +93,14 @@ export function parseMatches(text: string): Match[] {
     if (skip(line)) continue;
     const p = line.split(SPLIT).map((s) => s.trim());
     if (p.length < 5) continue;
-    const [round, date, home, score, away, pens] = p;
+    const [round, date, home, score, away] = p;
+    let pens: string | undefined;
+    let venue: string | undefined;
+    for (const extra of p.slice(5)) {
+      if (!extra) continue;
+      if (extra.startsWith("@")) venue = extra.slice(1).trim();
+      else pens = extra;
+    }
     const m = score.match(/^(\d+)\s*[-–:]\s*(\d+)$/);
     out.push({
       round: round || undefined,
@@ -97,6 +110,7 @@ export function parseMatches(text: string): Match[] {
       scoreHome: m ? Number(m[1]) : undefined,
       scoreAway: m ? Number(m[2]) : undefined,
       pens: pens || undefined,
+      venue: venue || undefined,
     });
   }
   return out;

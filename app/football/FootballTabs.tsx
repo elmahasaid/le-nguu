@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -21,12 +22,13 @@ import {
   slugify,
   sortStandings,
 } from "./parse";
+import Round from "../Round";
 
 type Section = "championnat" | "coupes";
 type ChampScope = "national" | Island;
 type CupScope = "nationale" | "regionale";
 
-/** Variables CSS de couleur d'une île (bleu / rouge / jaune) */
+/** Variables CSS de couleur d'une île */
 const themeOf = (i: Island) =>
   ({
     "--fb-c": ISLANDS[i].color,
@@ -34,7 +36,7 @@ const themeOf = (i: Island) =>
     "--fb-on": ISLANDS[i].on,
   }) as React.CSSProperties;
 
-/** Couleurs du championnat national : vert Le Nguu */
+/** Couleurs du championnat national */
 const nationalTheme = {
   "--fb-c": NATIONAL_THEME.color,
   "--fb-cd": NATIONAL_THEME.dark,
@@ -47,23 +49,26 @@ function Empty({ children }: { children: React.ReactNode }) {
   return <p className="fb-empty">{children}</p>;
 }
 
-function ClubLogo({ name }: { name: string }) {
+function ClubLogo({ name, size }: { name: string; size?: "m" }) {
   const [failed, setFailed] = useState(false);
+  const extra = size === "m" ? " fb-logo-m" : "";
+
   if (failed) {
     return (
-      <span className="fb-logo-fallback" aria-hidden>
+      <span className={`fb-logo-fallback${extra}`} aria-hidden>
         {initials(name)}
       </span>
     );
   }
+
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      className="fb-logo"
+      className={`fb-logo${extra}`}
       src={`/clubs/${slugify(name)}.png`}
       alt=""
-      width={34}
-      height={34}
+      width={46}
+      height={46}
       loading="lazy"
       onError={() => setFailed(true)}
     />
@@ -96,8 +101,11 @@ function StandingsCard({
 
   const maxPlayed = Math.max(0, ...rows.map((r) => r.played));
   const anyLate = !!showLate && rows.some((r) => r.played < maxPlayed);
-  // les colonnes BM / BE ne s'affichent que si au moins un club a ses buts renseignés
   const showGoals = rows.some((r) => r.gf !== null || r.ga !== null);
+  const showResults = rows.some(
+    (r) => r.won !== null || r.drawn !== null || r.lost !== null
+  );
+
   const zoneFor = (pos: number) =>
     zones.find((z) => pos >= z.from && pos <= (z.to ?? z.from));
 
@@ -124,40 +132,59 @@ function StandingsCard({
                   <th className="fb-club">Équipe</th>
                   <th className="fb-pts">Pts</th>
                   <th>MJ</th>
-                  <th>V</th>
-                  <th>N</th>
-                  <th>D</th>
+                  {showResults && <th>V</th>}
+                  {showResults && <th>N</th>}
+                  {showResults && <th>D</th>}
                   {showGoals && <th className="fb-hide-sm">BM</th>}
                   {showGoals && <th className="fb-hide-sm">BE</th>}
                   <th>Diff</th>
                 </tr>
               </thead>
+
               <tbody>
                 {rows.map((r, i) => {
                   const diff = r.diff;
                   const late = showLate ? maxPlayed - r.played : 0;
                   const z = zoneFor(i + 1);
+
                   return (
-                    <tr key={r.club} className={z ? `fb-z-${z.type}` : ""}>
+                    <tr
+                      key={r.club}
+                      className={z ? `fb-z-${z.type}` : ""}
+                    >
                       <td className="fb-pos">{i + 1}</td>
+
                       <td className="fb-logo-cell">
                         <ClubLogo name={r.club} />
                       </td>
+
                       <td className="fb-club">{r.club}</td>
                       <td className="fb-pts">{r.points}</td>
+
                       <td>
                         {late > 0 && (
-                          <span className="fb-late" title={`${late} match(s) en moins`}>
+                          <span
+                            className="fb-late"
+                            title={`${late} match(s) en moins`}
+                          >
                             −{late}
                           </span>
                         )}
                         {r.played}
                       </td>
-                      <td>{r.won}</td>
-                      <td>{r.drawn}</td>
-                      <td>{r.lost}</td>
-                      {showGoals && <td className="fb-hide-sm">{r.gf ?? "–"}</td>}
-                      {showGoals && <td className="fb-hide-sm">{r.ga ?? "–"}</td>}
+
+                      {showResults && <td>{r.won ?? "–"}</td>}
+                      {showResults && <td>{r.drawn ?? "–"}</td>}
+                      {showResults && <td>{r.lost ?? "–"}</td>}
+
+                      {showGoals && (
+                        <td className="fb-hide-sm">{r.gf ?? "–"}</td>
+                      )}
+
+                      {showGoals && (
+                        <td className="fb-hide-sm">{r.ga ?? "–"}</td>
+                      )}
+
                       <td>{diff > 0 ? `+${diff}` : diff}</td>
                     </tr>
                   );
@@ -173,14 +200,17 @@ function StandingsCard({
                   <i className={`fb-dot fb-dot-${z.type}`} /> {z.label}
                 </span>
               ))}
+
               {anyLate && (
                 <span>
                   <i className="fb-late">−1</i> Match(s) en moins
                 </span>
               )}
             </div>
+
             <div className="fb-foot-right">
-              {updated ? `Mis à jour le ${updated} · ` : ""}Le Nguu
+              {updated ? `Mis à jour le ${updated} · ` : ""}
+              Le Nguu
             </div>
           </footer>
         </>
@@ -189,46 +219,94 @@ function StandingsCard({
   );
 }
 
+/* ---------- Matchs et journées dépliables ---------- */
+
 function MatchList({ text, empty }: { text: string; empty: string }) {
   const groups = useMemo(() => {
-    const out: { round: string; matches: ReturnType<typeof parseMatches> }[] = [];
+    const out: {
+      round: string;
+      matches: ReturnType<typeof parseMatches>;
+    }[] = [];
+
     for (const m of parseMatches(text)) {
       const round = m.round ?? "Matchs";
       const last = out[out.length - 1];
-      if (last && last.round === round) last.matches.push(m);
-      else out.push({ round, matches: [m] });
+
+      if (last && last.round === round) {
+        last.matches.push(m);
+      } else {
+        out.push({
+          round,
+          matches: [m],
+        });
+      }
     }
+
     return out;
   }, [text]);
 
-  if (groups.length === 0) return <Empty>{empty}</Empty>;
+  if (groups.length === 0) {
+    return <Empty>{empty}</Empty>;
+  }
 
   return (
     <>
-      {groups.map((g) => (
-        <div key={g.round} className="fb-round">
-          <h4>{g.round}</h4>
-          <ul>
-            {g.matches.map((m, i) => {
-              const played = m.scoreHome !== undefined && m.scoreAway !== undefined;
-              return (
-                <li key={`${m.home}-${m.away}-${i}`} className="fb-match">
-                  <span className="fb-date">{m.date}</span>
-                  <span className="fb-home">{m.home}</span>
-                  <span className={`fb-score ${played ? "" : "fb-todo"}`}>
-                    {played ? `${m.scoreHome} - ${m.scoreAway}` : "–"}
+      {groups.map((g, index) => (
+        <Round
+          key={`${g.round}-${index}`}
+          title={g.round}
+          count={g.matches.length}
+          defaultOpen={false}
+        >
+          {g.matches.map((m, i) => {
+            const played =
+              m.scoreHome !== undefined &&
+              m.scoreAway !== undefined;
+
+            return (
+              <li
+                key={`${m.home}-${m.away}-${i}`}
+                className="fb-match"
+              >
+                <span className="fb-date">{m.date}</span>
+
+                <span className="fb-home fb-team">
+                  <span>{m.home}</span>
+                  <ClubLogo name={m.home} size="m" />
+                </span>
+
+                <span
+                  className={`fb-score ${played ? "" : "fb-todo"}`}
+                >
+                  {played
+                    ? `${m.scoreHome} - ${m.scoreAway}`
+                    : "–"}
+                </span>
+
+                <span className="fb-away fb-team">
+                  <ClubLogo name={m.away} size="m" />
+                  <span>{m.away}</span>
+                </span>
+
+                {m.pens && (
+                  <span className="fb-pens">
+                    t.a.b. {m.pens}
                   </span>
-                  <span className="fb-away">{m.away}</span>
-                  {m.pens && <span className="fb-pens">t.a.b. {m.pens}</span>}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+                )}
+
+                {m.venue && (
+                  <span className="fb-venue">{m.venue}</span>
+                )}
+              </li>
+            );
+          })}
+        </Round>
       ))}
     </>
   );
 }
+
+/* ---------- Boutons de navigation ---------- */
 
 function Pills<T extends string>({
   items,
@@ -236,7 +314,12 @@ function Pills<T extends string>({
   onChange,
   label,
 }: {
-  items: { id: T; label: string; sub?: string; style?: React.CSSProperties }[];
+  items: {
+    id: T;
+    label: string;
+    sub?: string;
+    style?: React.CSSProperties;
+  }[];
   value: T;
   onChange: (v: T) => void;
   label: string;
@@ -249,7 +332,9 @@ function Pills<T extends string>({
           type="button"
           role="tab"
           aria-selected={value === it.id}
-          className={`${value === it.id ? "on" : ""} ${it.style ? "isl" : ""}`}
+          className={`${value === it.id ? "on" : ""} ${
+            it.style ? "isl" : ""
+          }`}
           style={it.style}
           onClick={() => onChange(it.id)}
         >
@@ -274,7 +359,10 @@ function IslandLeague({ island }: { island: Island }) {
         label="Division"
         value={String(idx)}
         onChange={(v) => setIdx(Number(v))}
-        items={divisions.map((div, i) => ({ id: String(i), label: div.label }))}
+        items={divisions.map((div, i) => ({
+          id: String(i),
+          label: div.label,
+        }))}
       />
 
       <StandingsCard
@@ -289,7 +377,11 @@ function IslandLeague({ island }: { island: Island }) {
       />
 
       <h3 className="fb-h3">Résultats et calendrier</h3>
-      <MatchList text={d.matches} empty="Aucun match publié pour le moment." />
+
+      <MatchList
+        text={d.matches}
+        empty="Aucun match publié pour le moment."
+      />
     </div>
   );
 }
@@ -298,14 +390,17 @@ function NationalLeague() {
   return (
     <div className="fb-theme" style={nationalTheme}>
       <p className="fb-intro">
-        La phase nationale réunit les champions des ligues de Ngazidja, Ndzuani et Mwali.
+        La phase nationale réunit les champions des ligues de Ngazidja,
+        Ndzuani et Mwali.
       </p>
+
       {NATIONAL_LEAGUE.champion && (
         <div className="fb-champ">
           <span>Champion des Comores</span>
           <strong>{NATIONAL_LEAGUE.champion}</strong>
         </div>
       )}
+
       <StandingsCard
         kicker={`Championnat des Comores · ${SEASON}`}
         title="Phase nationale"
@@ -313,8 +408,13 @@ function NationalLeague() {
         zones={NATIONAL_LEAGUE.zones}
         updated={NATIONAL_LEAGUE.updated}
       />
+
       <h3 className="fb-h3">Résultats et calendrier</h3>
-      <MatchList text={NATIONAL_LEAGUE.matches} empty="Aucun match publié pour le moment." />
+
+      <MatchList
+        text={NATIONAL_LEAGUE.matches}
+        empty="Aucun match publié pour le moment."
+      />
     </div>
   );
 }
@@ -329,7 +429,11 @@ function Championnat() {
         value={scope}
         onChange={setScope}
         items={[
-          { id: "national", label: "National", style: nationalTheme },
+          {
+            id: "national",
+            label: "National",
+            style: nationalTheme,
+          },
           ...ISLAND_ORDER.map((i) => ({
             id: i as ChampScope,
             label: ISLANDS[i].name,
@@ -338,7 +442,12 @@ function Championnat() {
           })),
         ]}
       />
-      {scope === "national" ? <NationalLeague /> : <IslandLeague key={scope} island={scope} />}
+
+      {scope === "national" ? (
+        <NationalLeague />
+      ) : (
+        <IslandLeague key={scope} island={scope} />
+      )}
     </>
   );
 }
@@ -362,22 +471,28 @@ function Coupes() {
       />
 
       {scope === "nationale" ? (
-        <>
+        <div className="fb-theme" style={nationalTheme}>
           <p className="fb-intro">
-            Les vainqueurs des coupes régionales se retrouvent en phase nationale.
+            Les vainqueurs des coupes régionales se retrouvent en phase
+            nationale.
           </p>
+
           {NATIONAL_CUP.holder && (
             <div className="fb-champ">
               <span>Tenant du titre</span>
               <strong>{NATIONAL_CUP.holder}</strong>
             </div>
           )}
-          <h3 className="fb-h3">Coupe des Comores {SEASON} · phase nationale</h3>
+
+          <h3 className="fb-h3">
+            Coupe des Comores {SEASON} · phase nationale
+          </h3>
+
           <MatchList
             text={NATIONAL_CUP.matches}
             empty="Le tableau de la phase nationale sera publié bientôt."
           />
-        </>
+        </div>
       ) : (
         <>
           <Pills<Island>
@@ -391,10 +506,12 @@ function Coupes() {
               style: themeOf(i),
             }))}
           />
+
           <div className="fb-theme" style={themeOf(island)}>
             <h3 className="fb-h3">
               Coupe de {ISLANDS[island].name} ({ISLANDS[island].alt})
             </h3>
+
             <MatchList
               text={REGIONAL_CUPS[island]}
               empty="Le tableau de cette coupe régionale sera publié bientôt."
@@ -406,7 +523,7 @@ function Coupes() {
   );
 }
 
-/* ---------- Page ---------- */
+/* ---------- Page principale ---------- */
 
 export default function FootballTabs() {
   const [section, setSection] = useState<Section>("championnat");
@@ -415,11 +532,19 @@ export default function FootballTabs() {
   useEffect(() => {
     const apply = () => {
       const h = window.location.hash.replace("#", "");
-      if (h === "coupes" || h === "championnat") setSection(h);
+
+      if (h === "coupes" || h === "championnat") {
+        setSection(h);
+      }
     };
+
     apply();
+
     window.addEventListener("hashchange", apply);
-    return () => window.removeEventListener("hashchange", apply);
+
+    return () => {
+      window.removeEventListener("hashchange", apply);
+    };
   }, []);
 
   const choose = (s: Section) => {
@@ -429,7 +554,11 @@ export default function FootballTabs() {
 
   return (
     <div className="fb">
-      <div className="fb-sections" role="tablist" aria-label="Rubrique football">
+      <div
+        className="fb-sections"
+        role="tablist"
+        aria-label="Rubrique football"
+      >
         <button
           type="button"
           role="tab"
@@ -439,6 +568,7 @@ export default function FootballTabs() {
         >
           Championnat
         </button>
+
         <button
           type="button"
           role="tab"
@@ -450,7 +580,13 @@ export default function FootballTabs() {
         </button>
       </div>
 
-      <div className="fb-panel">{section === "championnat" ? <Championnat /> : <Coupes />}</div>
+      <div className="fb-panel">
+        {section === "championnat" ? (
+          <Championnat />
+        ) : (
+          <Coupes />
+        )}
+      </div>
     </div>
   );
 }

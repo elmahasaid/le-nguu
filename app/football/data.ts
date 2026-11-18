@@ -102,29 +102,53 @@ export const LEAGUES: Record<Island, Division[]> = {
   ngazidja: [
     {
       label: "Division 1",
-      phase: "Classement J4",
-      updated: "", // ex. "14 novembre 2026"
+      phase: "Classement J5",
+      updated: "18 novembre 2026",
       table: `
-        Djabal FC          | 4 | 2 | 1 | 1 | 4 | 1
-        Angelus Club       | 4 | 2 | 1 | 1 | 6 | 4
-        Elan Club          | 3 | 2 | 1 | 0 | 2 | 0
-        US Zilimadjou      | 4 | 2 | 1 | 1 | 4 | 3
-        Etoile des Comores | 4 | 1 | 2 | 1 | 8 | 8
-        Atomic Ngomé       | 4 | 1 | 2 | 1 | 5 | 5
-        FC Chouani         | 4 | 1 | 2 | 1 | 4 | 4
-        FC Malé            | 4 | 1 | 2 | 1 | 3 | 4
-        FC Hantsindzi      | 4 | 1 | 1 | 2 | 4 | 4
-        Amical Club        | 3 | 1 | 1 | 1 | 4 | 4
-        Volcan Club        | 4 | 1 | 0 | 3 | 2 | 5
-        Fekandza Club      | 4 | 1 | 0 | 3 | 2 | 6
+        Djabal FC          | 5 | 3 | 1 | 1 | 10 | 1
+        US Zilimadjou      | 5 | 3 | 1 | 1 | 5  | 3
+        FC Malé            | 5 | 2 | 2 | 1 | 7  | 5
+        Amical Club        | 4 | 2 | 1 | 1 | 6  | 4
+        FC Hantsindzi      | 5 | 2 | 1 | 2 | 5  | 4
+        Angelus Club       | 5 | 2 | 1 | 2 | 6  | 6
+        Elan Club          | 4 | 2 | 1 | 1 | 3  | 4
+        Volcan Club        | 5 | 2 | 0 | 3 | 3  | 5
+        Etoile des Comores | 5 | 1 | 2 | 2 | 8  | 9
+        Atomic Ngomé       | 5 | 1 | 2 | 2 | 5  | 6
+        FC Chouani         | 5 | 1 | 2 | 2 | 4  | 5
+        Fekandza Club      | 5 | 1 | 0 | 4 | 2  | 12
       `,
       matches: `
+        5e journée | Mer. 18 nov. | US Zilimadjou      | 1-0 | Atomic Ngomé
+        5e journée | Mer. 18 nov. | Etoile des Comores | 0-1 | Volcan Club
+        5e journée | Mer. 18 nov. | Djabal FC          | 6-0 | Fekandza Club
+        5e journée | Mer. 18 nov. | Angelus Club       | 0-2 | Amical Club
+        5e journée | Mer. 18 nov. | FC Hantsindzi      | 1-0 | FC Chouani
+        5e journée | Mer. 18 nov. | Elan Club          | 1-4 | FC Malé
         4e journée | Sam. 14 nov. | FC Malé            | 1-1 | US Zilimadjou
         4e journée | Sam. 14 nov. | Atomic Ngomé       | 2-3 | Etoile des Comores
         4e journée | Sam. 14 nov. | Volcan Club        | 0-2 | Djabal FC
         4e journée | Sam. 14 nov. | Fekandza Club      | 2-1 | Angelus Club
         4e journée | Sam. 14 nov. | Amical Club        | 1-1 | FC Hantsindzi
         4e journée | Sam. 14 nov. | FC Chouani         | 0-0 | Elan Club
+        3e journée | Sam. 7 nov.  | US Zilimadjou      | 0-2 | FC Chouani
+        3e journée | Sam. 7 nov.  | Etoile des Comores | 1-1 | FC Malé
+        3e journée | Sam. 7 nov.  | Djabal FC          | 0-0 | Atomic Ngomé
+        3e journée | Sam. 7 nov.  | Angelus Club       | 2-1 | Volcan Club
+        3e journée | Sam. 7 nov.  | FC Hantsindzi      | 2-0 | Fekandza Club
+        3e journée | Sam. 7 nov.  | Elan Club          | -   | Amical Club
+        2e journée | Sam. 31 oct. | Amical Club        | 0-1 | US Zilimadjou
+        2e journée | Sam. 31 oct. | FC Malé            | 1-0 | Djabal FC
+        2e journée | Sam. 31 oct. | Atomic Ngomé       | 1-1 | Angelus Club
+        2e journée | Sam. 31 oct. | Volcan Club        | 1-0 | FC Hantsindzi
+        2e journée | Sam. 31 oct. | Fekandza Club      | 0-1 | Elan Club
+        2e journée | Dim. 1 nov.  | FC Chouani         | 2-2 | Etoile des Comores
+        1re journée | Dim. 25 oct. | US Zilimadjou      | 2-0 | Fekandza Club
+        1re journée | Dim. 25 oct. | Etoile des Comores | 2-3 | Amical Club
+        1re journée | Dim. 25 oct. | Djabal FC          | 2-0 | FC Chouani
+        1re journée | Dim. 25 oct. | Angelus Club       | 2-0 | FC Malé
+        1re journée | Dim. 25 oct. | FC Hantsindzi      | 1-2 | Atomic Ngomé
+        1re journée | Dim. 25 oct. | Elan Club          | 1-0 | Volcan Club
       `,
       zones: [
         { from: 1, type: "up", label: "Champion" },
@@ -135,7 +159,7 @@ export const LEAGUES: Record<Island, Division[]> = {
     {
       label: "Division 2",
       phase: "Classement provisoire J4",
-      updated: "",
+      updated: "15 novembre 2026",
       table: `
         Alizé Fort          | 4 | 3 | 1 | 0 | 9 | 4
         US Mbeni            | 4 | 3 | 1 | 0 | 6 | 2
@@ -166,6 +190,24 @@ export const LEAGUES: Record<Island, Division[]> = {
         4e journée | Dim. 15 nov. | FC Mlaouni          | 0-2 | FC Mtsamdou
         4e journée | Dim. 15 nov. | Dynamo Club Chamlé  | 0-2 | Alizé Fort
         4e journée | Dim. 15 nov. | US Mbeni            | 1-0 | AJSD Club
+        3e journée | Dim. 1 nov.  | Avenir Club         | -   | Dynamo Club
+        3e journée | Dim. 1 nov.  | Twamaya Club        | -   | Coin Nord
+        3e journée | Dim. 1 nov.  | Enfants des Comores | -   | US Mbeni
+        3e journée | Dim. 1 nov.  | AJSD Club           | -   | US Selea
+        3e journée | Dim. 1 nov.  | Asim Club           | -   | Petit Harlem
+        3e journée | Dim. 1 nov.  | FC Mtsamdou         | -   | JACM
+        3e journée | Dim. 1 nov.  | FC Mdjoiezi         | -   | FC Mlaouni
+        3e journée | Dim. 1 nov.  | FC Mvoumbari        | -   | Ngaya Club
+        3e journée | Dim. 1 nov.  | Alizé Fort          | -   | Kaz Club
+        1re journée | Mer. 21 oct. | Twamaya Club        | 2-0 | US Selea
+        1re journée | Mer. 21 oct. | Enfants des Comores | 1-0 | Avenir Club
+        1re journée | Mer. 21 oct. | Kaz Club            | 1-3 | Ngaya Club
+        1re journée | Mer. 21 oct. | AJSD Club           | 4-0 | Dynamo Club
+        1re journée | Mer. 21 oct. | FC Mtsamdou         | 0-0 | US Mbeni
+        1re journée | Mer. 21 oct. | FC Mvoumbari        | 2-0 | FC Mlaouni
+        1re journée | Mer. 21 oct. | Alizé Fort          | 2-1 | Petit Harlem
+        1re journée | Sam. 24 oct. | Asim Club           | 3-1 | JACM
+        1re journée | Sam. 24 oct. | FC Mdjoiezi         | 1-1 | Coin Nord
       `,
       zones: [
         { from: 1, to: 2, type: "up", label: "Promus en 1re division" },
@@ -179,8 +221,9 @@ export const LEAGUES: Record<Island, Division[]> = {
   ],
 
   // ---------------------------------------------------------------
-  //  NDZUANI (Anjouan) — Division 1, classement J4
-  //  (buts marqués / encaissés non communiqués : tirets, puis points et différence)
+  //  NDZUANI (Anjouan)
+  //  D1 : buts marqués / encaissés non communiqués (tirets, puis points et différence)
+  //  D2 : victoires / nuls / défaites non communiqués non plus
   // ---------------------------------------------------------------
   ndzuani: [
     {
@@ -199,19 +242,43 @@ export const LEAGUES: Record<Island, Division[]> = {
         Style Nouvel    | 4 | 0 | 2 | 2 | - | - |  2 | -3
         FC Djomakawe    | 4 | 0 | 1 | 3 | - | - |  1 | -3
       `,
-      matches: ``,
+      matches: `
+        5e journée | Ven. 20 nov. 15h00 | Ngazi Sport | - | Chirazienne
+        5e journée | Sam. 21 nov. 15h00 | AS Singani  | - | Beressé Club
+      `,
       zones: [
         { from: 1, type: "up", label: "Champion" },
         { from: 8, type: "mid", label: "Barrage de maintien" },
         { from: 9, to: 10, type: "down", label: "Relégation en Division 2" },
       ],
     },
-    blank("Division 2"),
+    {
+      label: "Division 2",
+      phase: "Classement",
+      updated: "",
+      table: `
+        Étoile d'Or          | 3 | 0 | 0 | 0 | 0 | 0 | 7 | +4
+        Nouvel Vagues        | 2 | 0 | 0 | 0 | 0 | 0 | 6 | +2
+        Chavani Club         | 2 | 0 | 0 | 0 | 0 | 0 | 4 | +1
+        US Bambao            | 3 | 0 | 0 | 0 | 0 | 0 | 4 | +1
+        UJSM Simba           | 3 | 0 | 0 | 0 | 0 | 0 | 4 | +1
+        Ziarra Club          | 3 | 0 | 0 | 0 | 0 | 0 | 4 | +1
+        FC Ouani             | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0
+        Ensemble des Amis    | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0
+        Barakane Sport       | 2 | 0 | 0 | 0 | 0 | 0 | 3 | 0
+        AS Daoueni           | 1 | 0 | 0 | 0 | 0 | 0 | 2 | -1
+        Café Sport           | 3 | 0 | 0 | 0 | 0 | 0 | 1 | -2
+        JS Bazimini          | 3 | 0 | 0 | 0 | 0 | 0 | 0 | -1
+        FC Daoueni           | 2 | 0 | 0 | 0 | 0 | 0 | 0 | -3
+      `,
+      matches: ``,
+      zones: [],
+    },
     blank("Division 3"),
   ],
 
   // ---------------------------------------------------------------
-  //  MWALI (Mohéli) — Division 1, classement J4
+  //  MWALI (Mohéli)
   // ---------------------------------------------------------------
   mwali: [
     {
@@ -228,14 +295,30 @@ export const LEAGUES: Record<Island, Division[]> = {
         Coca Bole         | 4 | 1 | 0 | 3 | - | - |  3 | -3
         Sargonco          | 3 | 0 | 1 | 2 | - | - |  1 | -3
       `,
-      matches: ``,
+      matches: `
+        5e journée | Sam. 21 nov. 15h00 | Mbatsé Club | - | Koukoulé FC
+        5e journée | Sam. 21 nov. 15h00 | US Wanani   | - | Fomboni FC
+      `,
       zones: [
         { from: 1, type: "up", label: "Champion" },
         { from: 5, type: "mid", label: "Barrage de maintien" },
         { from: 6, to: 8, type: "down", label: "Relégation en Division 2" },
       ],
     },
-    blank("Division 2"),
+    {
+      label: "Division 2",
+      phase: "5e journée",
+      updated: "18 novembre 2026",
+      table: ``,
+      matches: `
+        5e journée | Mer. 18 nov. | Chikabwe USH   | - | 11 Rockets
+        5e journée | Mer. 18 nov. | Juno Club      | 0-1 | Silex Club
+        5e journée | Mer. 18 nov. | Dynamique CM   | - | FC Itsamia
+        5e journée | Sam. 21 nov. | Kangani Sport  | - | Onze Étoiles
+        5e journée | Dim. 22 nov. | Arsenal Club   | - | Wemani Espoir
+      `,
+      zones: [],
+    },
     blank("Division 3"),
   ],
 };
@@ -262,6 +345,11 @@ export const REGIONAL_CUPS: Record<Island, string> = {
     Phase éliminatoire D2 | Ven. 6 nov. | Petit Harlem        | 4-0 | AJSD Club
     Phase éliminatoire D2 | Ven. 6 nov. | US Mbeni            | 1-1 | FC Mtsamdou | 2-4
     Phase éliminatoire D2 | Ven. 6 nov. | Enfants des Comores | 0-1 | US Selea
+    Phase éliminatoire D2 | Dim. 8 nov. | Dynamo Club Chamlé  | 1-3 | FC Mvoumbari
+    Phase éliminatoire D2 | Dim. 8 nov. | Twamaya Club        | 1-1 | Avenir Club | 10-11
+    Phase éliminatoire D2 | Dim. 8 nov. | Kaz Club            | 1-1 | Ngaya Club  | 3-4
+    Phase éliminatoire D2 | Dim. 8 nov. | Alizé Fort          | 3-2 | JACM
+    Phase éliminatoire D2 | Dim. 8 nov. | FC Mlaouni          | 1-1 | FC Mdjoiezi | 4-3
   `,
   ndzuani: ``,
   mwali: ``,

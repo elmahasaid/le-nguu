@@ -225,7 +225,7 @@
 .fb-table tbody tr:nth-child(even) { background: var(--paper); }
 
 .fb-table .fb-pos { width: 46px; font-weight: 800; color: var(--fb-cd); }
-.fb-table .fb-logo-cell { width: 48px; padding: 4px; }
+.fb-table .fb-logo-cell { width: 66px; padding: 5px 6px; }
 .fb-table .fb-club { text-align: left; font-weight: 700; min-width: 160px; }
 .fb-table th.fb-club { padding-left: 4px; }
 .fb-table .fb-pts { font-weight: 800; font-size: 18px; }
@@ -233,7 +233,7 @@
 
 .fb-logo, .fb-logo-fallback {
   display: block;
-  width: 34px; height: 34px;
+  width: 46px; height: 46px;
   margin: 0 auto;
   border-radius: 50%;
   background: #fff;
@@ -243,7 +243,14 @@
   display: flex; align-items: center; justify-content: center;
   background: #e9e5da; color: var(--green);
   font-family: "Source Sans 3", system-ui, sans-serif;
-  font-weight: 800; font-size: 12px;
+  font-weight: 800; font-size: 15px;
+}
+/* logos des listes de résultats */
+.fb-logo.fb-logo-m, .fb-logo-fallback.fb-logo-m {
+  width: 42px; height: 42px;
+  margin: 0;
+  flex: none;
+  font-size: 14px;
 }
 
 /* Zones : vert = champion, orange = barrage, rouge foncé = relégation */
@@ -322,6 +329,16 @@
 .fb-date { font-size: 13px; color: var(--mute); }
 .fb-home { text-align: right; font-weight: 600; }
 .fb-away { text-align: left; font-weight: 600; }
+.fb-team { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.fb-home.fb-team { justify-content: flex-end; }
+.fb-away.fb-team { justify-content: flex-start; }
+.fb-venue {
+  grid-column: 2 / 5;
+  justify-self: center;
+  margin-top: -2px;
+  font-size: 13px;
+  color: var(--mute);
+}
 .fb-score {
   text-align: center;
   background: var(--fb-cd);
@@ -381,8 +398,9 @@
   .fb-table th { font-size: 11px; padding: 8px 3px; }
   .fb-table td { padding: 6px 3px; }
   .fb-table .fb-pos { width: 28px; }
-  .fb-table .fb-logo-cell { width: 36px; padding: 3px; }
-  .fb-logo, .fb-logo-fallback { width: 28px; height: 28px; font-size: 10px; }
+  .fb-table .fb-logo-cell { width: 44px; padding: 3px; }
+  .fb-logo, .fb-logo-fallback { width: 36px; height: 36px; font-size: 12px; }
+  .fb-logo.fb-logo-m, .fb-logo-fallback.fb-logo-m { width: 38px; height: 38px; font-size: 12px; }
   .fb-table .fb-club { min-width: 0; line-height: 1.15; }
   .fb-table .fb-pts { font-size: 16px; }
   .fb-late { margin-right: 3px; font-size: 10px; }
@@ -397,4 +415,84 @@
   }
   .fb-date { grid-column: 1 / 4; text-align: center; }
   .fb-pens { grid-column: 1 / 4; }
+  .fb-venue { grid-column: 1 / 4; margin-top: 0; }
+  /* sur mobile : logo au-dessus du nom de l'équipe */
+  .fb-team { flex-direction: column; gap: 4px; justify-content: flex-start; text-align: center; line-height: 1.15; }
+  .fb-home.fb-team { flex-direction: column-reverse; justify-content: flex-end; }
+  .fb-home.fb-team, .fb-away.fb-team { text-align: center; }
+}
+
+
+/* =========================================
+   ROUND — Journées et tours dépliables
+   Couleurs dynamiques selon le championnat
+========================================= */
+
+.fb-round {
+  width: 100%;
+  margin: 14px 0;
+  overflow: hidden;
+}
+
+.fb-round-head {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 16px;
+
+  border: none;
+  border-left: 6px solid var(--fb-c, #2463c6);
+  border-radius: 0;
+
+  background-color: color-mix(
+    in srgb,
+    var(--fb-c, #2463c6) 10%,
+    #e9e6dc
+  );
+
+  color: var(--fb-cd, #174a91);
+
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 750;
+  text-align: left;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.fb-round-head:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--fb-c, #2463c6) 17%,
+    #e9e6dc
+  );
+}
+
+.fb-round-title {
+  flex: 1;
+}
+
+.fb-round-count {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.fb-round-head .fb-chevron {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.fb-round.open .fb-round-head .fb-chevron {
+  transform: rotate(180deg);
+}
+
+.fb-round > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
