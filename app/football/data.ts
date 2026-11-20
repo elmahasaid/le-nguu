@@ -181,6 +181,15 @@ export const LEAGUES: Record<Island, Division[]> = {
         Coin Nord           | 4 | 0 | 1 | 3 | 3 | 8
       `,
       matches: `
+        5e journée | Jeu. 19 nov. 15h00 | Avenir Club         | - | US Mbeni            | @Stade de Chindini
+        5e journée | Jeu. 19 nov. 15h00 | Twamaya Club        | - | FC Mlaouni          | @Stade de Mvouni
+        5e journée | Jeu. 19 nov. 15h00 | Enfants des Comores | - | JACM                | @Stade de Moindzaza
+        5e journée | Jeu. 19 nov. 15h00 | AJSD Club           | - | Coin Nord           | @Stade de Gnambeni
+        5e journée | Jeu. 19 nov. 15h00 | Asim Club           | - | Kaz Club            | @Stade de Salimani
+        5e journée | Jeu. 19 nov. 15h00 | FC Mtsamdou         | - | Petit Harlem        | @Stade de Mtsamdou
+        5e journée | Jeu. 19 nov. 15h00 | FC Mdjoiezi         | - | Ngaya Club          | @Stade de Nioumadzaha
+        5e journée | Jeu. 19 nov. 15h00 | FC Mvoumbari        | - | Alizé Fort          | @Stade de Foumbouni
+        5e journée | Ven. 20 nov. 15h00 | US Selea            | - | Dynamo Club Chamlé  | @Stade de Nioumadzaha
         4e journée | Dim. 15 nov. | Kaz Club            | 1-1 | FC Mvoumbari
         4e journée | Dim. 15 nov. | Coin Nord           | 1-2 | Enfants des Comores
         4e journée | Dim. 15 nov. | Petit Harlem        | 2-0 | FC Mdjoiezi
@@ -237,9 +246,9 @@ export const LEAGUES: Record<Island, Division[]> = {
         Chirazienne     | 4 | 2 | 2 | 0 | - | - |  8 | +3
         AS Komorozine   | 4 | 1 | 2 | 1 | - | - |  5 | 0
         Ngazi Sport     | 4 | 1 | 1 | 2 | - | - |  4 | -3
-        Beressé Club    | 4 | 0 | 3 | 1 | - | - |  3 | -4
         AS Singani      | 4 | 1 | 0 | 3 | - | - |  3 | -4
-        Style Nouvel    | 4 | 0 | 2 | 2 | - | - |  2 | -3
+        Beressé Club    | 4 | 0 | 3 | 1 | - | - |  3 | -4
+        Steal Nouvel    | 4 | 0 | 2 | 2 | - | - |  2 | -3
         FC Djomakawe    | 4 | 0 | 1 | 3 | - | - |  1 | -3
       `,
       matches: `

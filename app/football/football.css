@@ -496,3 +496,31 @@
   padding: 0;
   list-style: none;
 }
+
+
+/* =========================================
+   LOGO DE LA LIGUE dans l'en-tête du classement
+   (fichiers : public/ligues/ngazidja.png, ndzuani.png, mwali.png)
+========================================= */
+
+.fb-card-id {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.fb-league-logo {
+  flex: none;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #ffffff;
+  object-fit: contain;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 768px) {
+  .fb-card-id { gap: 12px; }
+  .fb-league-logo { width: 48px; height: 48px; }
+}

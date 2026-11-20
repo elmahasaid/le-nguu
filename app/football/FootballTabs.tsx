@@ -84,6 +84,7 @@ function StandingsCard({
   autoSort,
   showLate,
   updated,
+  logo,
 }: {
   kicker: string;
   title: string;
@@ -93,6 +94,7 @@ function StandingsCard({
   autoSort?: boolean;
   showLate?: boolean;
   updated?: string;
+  logo?: string; // logo de la ligue, affiché à gauche du titre
 }) {
   const rows = useMemo(() => {
     const r = parseStandings(text);
@@ -112,9 +114,15 @@ function StandingsCard({
   return (
     <section className="fb-card">
       <header className="fb-card-head">
-        <div>
-          <span className="fb-card-kicker">{kicker}</span>
-          <h3>{title}</h3>
+        <div className="fb-card-id">
+          {logo && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img className="fb-league-logo" src={logo} alt="" width={68} height={68} />
+          )}
+          <div>
+            <span className="fb-card-kicker">{kicker}</span>
+            <h3>{title}</h3>
+          </div>
         </div>
         {phase && <em>{phase}</em>}
       </header>
@@ -374,6 +382,7 @@ function IslandLeague({ island }: { island: Island }) {
         autoSort={d.autoSort}
         showLate={d.showLate}
         updated={d.updated}
+        logo={`/ligues/${island}.png`}
       />
 
       <h3 className="fb-h3">Résultats et calendrier</h3>
