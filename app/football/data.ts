@@ -119,36 +119,42 @@ export const LEAGUES: Record<Island, Division[]> = {
         Fekandza Club      | 5 | 1 | 0 | 4 | 2  | 12
       `,
       matches: `
-        5e journée | Mer. 18 nov. | US Zilimadjou      | 1-0 | Atomic Ngomé
-        5e journée | Mer. 18 nov. | Etoile des Comores | 0-1 | Volcan Club
-        5e journée | Mer. 18 nov. | Djabal FC          | 6-0 | Fekandza Club
-        5e journée | Mer. 18 nov. | Angelus Club       | 0-2 | Amical Club
-        5e journée | Mer. 18 nov. | FC Hantsindzi      | 1-0 | FC Chouani
-        5e journée | Mer. 18 nov. | Elan Club          | 1-4 | FC Malé
-        4e journée | Sam. 14 nov. | FC Malé            | 1-1 | US Zilimadjou
-        4e journée | Sam. 14 nov. | Atomic Ngomé       | 2-3 | Etoile des Comores
-        4e journée | Sam. 14 nov. | Volcan Club        | 0-2 | Djabal FC
-        4e journée | Sam. 14 nov. | Fekandza Club      | 2-1 | Angelus Club
-        4e journée | Sam. 14 nov. | Amical Club        | 1-1 | FC Hantsindzi
-        4e journée | Sam. 14 nov. | FC Chouani         | 0-0 | Elan Club
+        6e journée | Sam. 21 nov. 15h00 | US Zilimadjou      | - | Volcan Club        | @Stade de Moroni
+        6e journée | Sam. 21 nov. 15h00 | Fekandza Club      | - | Etoile des Comores | @Stade de Madjeouéni
+        6e journée | Sam. 21 nov. 15h00 | Amical Club        | - | Djabal FC          | @Stade de Chezani
+        6e journée | Sam. 21 nov. 15h00 | FC Chouani         | - | Angelus Club       | @Stade de Nioumadzaha
+        6e journée | Sam. 21 nov. 15h00 | FC Malé            | - | FC Hantsindzi      | @Stade de Malé
+        6e journée | Sam. 21 nov. 15h00 | Atomic Ngomé       | - | Elan Club          | @Stade de Mitsamiouli
+        5e journée | Mer. 18 nov. | US Zilimadjou      | 1-0 | Atomic Ngomé       | @Stade de Moroni
+        5e journée | Mer. 18 nov. | Etoile des Comores | 0-1 | Volcan Club        | @Stade de Nioumadzaha
+        5e journée | Mer. 18 nov. | Djabal FC          | 6-0 | Fekandza Club      | @Stade d'Iconi
+        5e journée | Mer. 18 nov. | Angelus Club       | 0-2 | Amical Club        | @Stade de Moindzaza
+        5e journée | Mer. 18 nov. | FC Hantsindzi      | 1-0 | FC Chouani         | @Stade de Hantsindzi
+        5e journée | Mer. 18 nov. | Elan Club          | 1-4 | FC Malé            | @Stade de Mitsamiouli
+        4e journée | Sam. 14 nov. | FC Malé            | 1-1 | US Zilimadjou      | @Stade de Malé
+        4e journée | Sam. 14 nov. | Atomic Ngomé       | 2-3 | Etoile des Comores | @Stade de Mitsamiouli
+        4e journée | Sam. 14 nov. | Volcan Club        | 0-2 | Djabal FC          | @Stade de Moroni
+        4e journée | Sam. 14 nov. | Fekandza Club      | 2-1 | Angelus Club       | @Stade de Madjeouéni
+        4e journée | Sam. 14 nov. | Amical Club        | 1-1 | FC Hantsindzi      | @Stade de Chezani
+        4e journée | Sam. 14 nov. | FC Chouani         | 0-0 | Elan Club          | @Stade de Nioumadzaha
         3e journée | Sam. 7 nov.  | US Zilimadjou      | 0-2 | FC Chouani
         3e journée | Sam. 7 nov.  | Etoile des Comores | 1-1 | FC Malé
         3e journée | Sam. 7 nov.  | Djabal FC          | 0-0 | Atomic Ngomé
         3e journée | Sam. 7 nov.  | Angelus Club       | 2-1 | Volcan Club
         3e journée | Sam. 7 nov.  | FC Hantsindzi      | 2-0 | Fekandza Club
         3e journée | Sam. 7 nov.  | Elan Club          | -   | Amical Club
-        2e journée | Sam. 31 oct. | Amical Club        | 0-1 | US Zilimadjou
-        2e journée | Sam. 31 oct. | FC Malé            | 1-0 | Djabal FC
-        2e journée | Sam. 31 oct. | Atomic Ngomé       | 1-1 | Angelus Club
-        2e journée | Sam. 31 oct. | Volcan Club        | 1-0 | FC Hantsindzi
-        2e journée | Sam. 31 oct. | Fekandza Club      | 0-1 | Elan Club
-        2e journée | Dim. 1 nov.  | FC Chouani         | 2-2 | Etoile des Comores
-        1re journée | Dim. 25 oct. | US Zilimadjou      | 2-0 | Fekandza Club
-        1re journée | Dim. 25 oct. | Etoile des Comores | 2-3 | Amical Club
-        1re journée | Dim. 25 oct. | Djabal FC          | 2-0 | FC Chouani
-        1re journée | Dim. 25 oct. | Angelus Club       | 2-0 | FC Malé
-        1re journée | Dim. 25 oct. | FC Hantsindzi      | 1-2 | Atomic Ngomé
-        1re journée | Dim. 25 oct. | Elan Club          | 1-0 | Volcan Club
+        2e journée | Sam. 31 oct. | Amical Club        | 0-1 | US Zilimadjou      | @Stade de Chezani
+        2e journée | Sam. 31 oct. | FC Malé            | 1-0 | Djabal FC          | @Stade de Malé
+        2e journée | Sam. 31 oct. | Atomic Ngomé       | 1-1 | Angelus Club       | @Stade de Mitsamiouli
+        2e journée | Sam. 31 oct. | Volcan Club        | 1-0 | FC Hantsindzi      | @Stade de Moroni
+        2e journée | Sam. 31 oct. | Fekandza Club      | 0-1 | Elan Club          | @Stade de Madjeouéni
+        2e journée | Dim. 1 nov.  | FC Chouani         | 2-2 | Etoile des Comores | @Stade de Moroni
+        1re journée | Dim. 25 oct. | US Zilimadjou      | 2-0 | Fekandza Club      | @Stade de Moroni
+        1re journée | Dim. 25 oct. | Etoile des Comores | 2-3 | Amical Club        | @Stade de Nioumadzaha
+        1re journée | Dim. 25 oct. | Djabal FC          | 2-0 | FC Chouani         | @Stade d'Iconi
+        1re journée | Dim. 25 oct. | Angelus Club       | 2-0 | FC Malé            | @Stade de Moindzaza
+        1re journée | Dim. 25 oct. | FC Hantsindzi      | 1-2 | Atomic Ngomé       | @Stade de Hantsindzi
+        1re journée | Dim. 25 oct. | Elan Club          | 1-0 | Volcan Club        | @Stade de Mitsamiouli
       `,
       zones: [
         { from: 1, type: "up", label: "Champion" },
@@ -158,65 +164,65 @@ export const LEAGUES: Record<Island, Division[]> = {
     },
     {
       label: "Division 2",
-      phase: "Classement provisoire J4",
-      updated: "15 novembre 2026",
+      phase: "Classement J5",
+      updated: "20 novembre 2026",
       table: `
-        Alizé Fort          | 4 | 3 | 1 | 0 | 9 | 4
-        US Mbeni            | 4 | 3 | 1 | 0 | 6 | 2
-        Petit Harlem        | 4 | 3 | 0 | 1 | 9 | 4
-        Ngaya Club          | 4 | 3 | 0 | 1 | 9 | 5
-        FC Mtsamdou         | 4 | 2 | 2 | 0 | 4 | 1
-        Twamaya Club        | 4 | 2 | 0 | 2 | 6 | 7
-        US Selea            | 4 | 2 | 0 | 2 | 6 | 7
-        Enfants des Comores | 4 | 2 | 0 | 2 | 5 | 5
-        Avenir Club         | 4 | 2 | 0 | 2 | 5 | 7
-        AJSD Club           | 4 | 2 | 0 | 2 | 8 | 3
-        Asim Club           | 4 | 2 | 0 | 2 | 5 | 8
-        JACM                | 4 | 1 | 2 | 1 | 4 | 5
-        FC Mvoumbari        | 4 | 1 | 1 | 2 | 5 | 5
-        FC Mlaouni          | 4 | 1 | 0 | 3 | 3 | 6
-        Dynamo Club Chamlé  | 4 | 1 | 0 | 3 | 2 | 7
-        FC Mdjoiezi         | 4 | 0 | 2 | 2 | 3 | 7
-        Kaz Club            | 4 | 0 | 2 | 2 | 4 | 8
-        Coin Nord           | 4 | 0 | 1 | 3 | 3 | 8
+        Ngaya Club          | 5 | 4 | 0 | 1 | 10 | 5
+        Alizé Fort          | 5 | 3 | 2 | 0 | 9  | 4
+        US Mbeni            | 5 | 3 | 2 | 0 | 7  | 3
+        Petit Harlem        | 5 | 3 | 1 | 1 | 9  | 4
+        FC Mtsamdou         | 5 | 2 | 3 | 0 | 4  | 1
+        JACM                | 5 | 2 | 2 | 1 | 9  | 5
+        AJSD Club           | 5 | 2 | 1 | 2 | 9  | 4
+        Twamaya Club        | 5 | 2 | 1 | 2 | 6  | 7
+        US Selea            | 5 | 2 | 1 | 2 | 7  | 8
+        Avenir Club         | 5 | 2 | 1 | 2 | 6  | 8
+        Enfants des Comores | 5 | 2 | 0 | 3 | 5  | 7
+        Asim Club           | 5 | 2 | 0 | 3 | 7  | 11
+        FC Mvoumbari        | 5 | 1 | 2 | 2 | 5  | 5
+        Kaz Club            | 5 | 1 | 2 | 2 | 7  | 10
+        FC Mlaouni          | 5 | 1 | 1 | 3 | 3  | 6
+        Dynamo Club Chamlé  | 5 | 1 | 1 | 3 | 3  | 8
+        Coin Nord           | 5 | 0 | 2 | 3 | 4  | 9
+        FC Mdjoiezi         | 5 | 0 | 2 | 3 | 3  | 8
       `,
       matches: `
-        5e journée | Jeu. 19 nov. 15h00 | Avenir Club         | - | US Mbeni            | @Stade de Chindini
-        5e journée | Jeu. 19 nov. 15h00 | Twamaya Club        | - | FC Mlaouni          | @Stade de Mvouni
-        5e journée | Jeu. 19 nov. 15h00 | Enfants des Comores | - | JACM                | @Stade de Moindzaza
-        5e journée | Jeu. 19 nov. 15h00 | AJSD Club           | - | Coin Nord           | @Stade de Gnambeni
-        5e journée | Jeu. 19 nov. 15h00 | Asim Club           | - | Kaz Club            | @Stade de Salimani
-        5e journée | Jeu. 19 nov. 15h00 | FC Mtsamdou         | - | Petit Harlem        | @Stade de Mtsamdou
-        5e journée | Jeu. 19 nov. 15h00 | FC Mdjoiezi         | - | Ngaya Club          | @Stade de Nioumadzaha
-        5e journée | Jeu. 19 nov. 15h00 | FC Mvoumbari        | - | Alizé Fort          | @Stade de Foumbouni
-        5e journée | Ven. 20 nov. 15h00 | US Selea            | - | Dynamo Club Chamlé  | @Stade de Nioumadzaha
-        4e journée | Dim. 15 nov. | Kaz Club            | 1-1 | FC Mvoumbari
-        4e journée | Dim. 15 nov. | Coin Nord           | 1-2 | Enfants des Comores
-        4e journée | Dim. 15 nov. | Petit Harlem        | 2-0 | FC Mdjoiezi
-        4e journée | Dim. 15 nov. | JACM                | 4-0 | Twamaya Club
-        4e journée | Dim. 15 nov. | Ngaya Club          | 3-0 | Asim Club
-        4e journée | Dim. 15 nov. | US Selea            | 5-2 | Avenir Club
-        4e journée | Dim. 15 nov. | FC Mlaouni          | 0-2 | FC Mtsamdou
-        4e journée | Dim. 15 nov. | Dynamo Club Chamlé  | 0-2 | Alizé Fort
-        4e journée | Dim. 15 nov. | US Mbeni            | 1-0 | AJSD Club
-        3e journée | Dim. 1 nov.  | Avenir Club         | -   | Dynamo Club
-        3e journée | Dim. 1 nov.  | Twamaya Club        | -   | Coin Nord
-        3e journée | Dim. 1 nov.  | Enfants des Comores | -   | US Mbeni
-        3e journée | Dim. 1 nov.  | AJSD Club           | -   | US Selea
-        3e journée | Dim. 1 nov.  | Asim Club           | -   | Petit Harlem
-        3e journée | Dim. 1 nov.  | FC Mtsamdou         | -   | JACM
-        3e journée | Dim. 1 nov.  | FC Mdjoiezi         | -   | FC Mlaouni
-        3e journée | Dim. 1 nov.  | FC Mvoumbari        | -   | Ngaya Club
-        3e journée | Dim. 1 nov.  | Alizé Fort          | -   | Kaz Club
-        1re journée | Mer. 21 oct. | Twamaya Club        | 2-0 | US Selea
-        1re journée | Mer. 21 oct. | Enfants des Comores | 1-0 | Avenir Club
-        1re journée | Mer. 21 oct. | Kaz Club            | 1-3 | Ngaya Club
-        1re journée | Mer. 21 oct. | AJSD Club           | 4-0 | Dynamo Club
-        1re journée | Mer. 21 oct. | FC Mtsamdou         | 0-0 | US Mbeni
-        1re journée | Mer. 21 oct. | FC Mvoumbari        | 2-0 | FC Mlaouni
-        1re journée | Mer. 21 oct. | Alizé Fort          | 2-1 | Petit Harlem
-        1re journée | Sam. 24 oct. | Asim Club           | 3-1 | JACM
-        1re journée | Sam. 24 oct. | FC Mdjoiezi         | 1-1 | Coin Nord
+        5e journée | Jeu. 19 nov. | Avenir Club         | 1-1 | US Mbeni            | @Stade de Chindini
+        5e journée | Jeu. 19 nov. | Twamaya Club        | 0-0 | FC Mlaouni          | @Stade de Mvouni
+        5e journée | Jeu. 19 nov. | Enfants des Comores | 0-2 | JACM                | @Stade de Moindzaza
+        5e journée | Jeu. 19 nov. | AJSD Club           | 1-1 | Coin Nord           | @Stade de Gnambeni
+        5e journée | Jeu. 19 nov. | Asim Club           | 2-3 | Kaz Club            | @Stade de Salimani
+        5e journée | Jeu. 19 nov. | FC Mtsamdou         | 0-0 | Petit Harlem        | @Stade de Mtsamdou
+        5e journée | Jeu. 19 nov. | FC Mdjoiezi         | 0-1 | Ngaya Club          | @Stade de Nioumadzaha
+        5e journée | Jeu. 19 nov. | FC Mvoumbari        | 0-0 | Alizé Fort          | @Stade de Foumbouni
+        5e journée | Ven. 20 nov. | US Selea            | 1-1 | Dynamo Club Chamlé  | @Stade de Nioumadzaha
+        4e journée | Dim. 15 nov. | Kaz Club            | 1-1 | FC Mvoumbari        | @Stade d'Iconi
+        4e journée | Dim. 15 nov. | Coin Nord           | 1-2 | Enfants des Comores | @Stade de Mitsamiouli
+        4e journée | Dim. 15 nov. | Petit Harlem        | 2-0 | FC Mdjoiezi         | @Stade d'Ouroveni
+        4e journée | Dim. 15 nov. | JACM                | 4-0 | Twamaya Club        | @Stade de Mitsoudjé
+        4e journée | Dim. 15 nov. | Ngaya Club          | 3-0 | Asim Club           | @Stade de Moroni
+        4e journée | Dim. 15 nov. | US Selea            | 5-2 | Avenir Club         | @Stade de Nioumadzaha
+        4e journée | Dim. 15 nov. | FC Mlaouni          | 0-2 | FC Mtsamdou         | @Stade d'Itsinkoudi
+        4e journée | Dim. 15 nov. | Dynamo Club Chamlé  | 0-2 | Alizé Fort          | @Stade de Chamlé
+        4e journée | Dim. 15 nov. | US Mbeni            | 1-0 | AJSD Club           | @Stade de Mbeni
+        3e journée | Dim. 1 nov.  | Avenir Club         | 1-0 | Dynamo Club Chamlé
+        3e journée | Dim. 1 nov.  | Twamaya Club        | 4-1 | Coin Nord
+        3e journée | Dim. 1 nov.  | Enfants des Comores | 2-3 | US Mbeni
+        3e journée | Dim. 1 nov.  | AJSD Club           | 3-0 | US Selea
+        3e journée | Dim. 1 nov.  | Asim Club           | 1-4 | Petit Harlem
+        3e journée | Dim. 1 nov.  | FC Mtsamdou         | 1-1 | JACM
+        3e journée | Dim. 1 nov.  | FC Mdjoiezi         | 1-3 | FC Mlaouni
+        3e journée | Dim. 1 nov.  | FC Mvoumbari        | 1-2 | Ngaya Club
+        3e journée | Dim. 1 nov.  | Alizé Fort          | 2-2 | Kaz Club
+        1re journée | Mer. 21 oct. | Twamaya Club        | 2-0 | US Selea            | @Stade de Mvouni
+        1re journée | Mer. 21 oct. | Enfants des Comores | 1-0 | Avenir Club         | @Stade de Chindini
+        1re journée | Mer. 21 oct. | Kaz Club            | 1-3 | Ngaya Club          | @Stade de Moindzaza
+        1re journée | Mer. 21 oct. | AJSD Club           | 4-0 | Dynamo Club Chamlé  | @Stade de Gnambeni
+        1re journée | Mer. 21 oct. | FC Mtsamdou         | 0-0 | US Mbeni            | @Stade de Mtsamdou
+        1re journée | Mer. 21 oct. | FC Mvoumbari        | 2-0 | FC Mlaouni          | @Stade de Foumbouni
+        1re journée | Mer. 21 oct. | Alizé Fort          | 2-1 | Petit Harlem        | @Stade de Salimani
+        1re journée | Sam. 24 oct. | Asim Club           | 3-1 | JACM                | @Stade de Mitsoudjé
+        1re journée | Sam. 24 oct. | FC Mdjoiezi         | 1-1 | Coin Nord           | @Stade de Nioumadzaha
       `,
       zones: [
         { from: 1, to: 2, type: "up", label: "Promus en 1re division" },
@@ -321,7 +327,7 @@ export const LEAGUES: Record<Island, Division[]> = {
       table: ``,
       matches: `
         5e journée | Mer. 18 nov. | Chikabwe USH   | - | 11 Rockets
-        5e journée | Mer. 18 nov. | Juno Club      | 0-1 | Silex Club
+        5e journée | Mer. 18 nov. | Juno Club      | 0-1 | Silex Club | @Stade de Hoani
         5e journée | Mer. 18 nov. | Dynamique CM   | - | FC Itsamia
         5e journée | Sam. 21 nov. | Kangani Sport  | - | Onze Étoiles
         5e journée | Dim. 22 nov. | Arsenal Club   | - | Wemani Espoir

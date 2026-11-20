@@ -152,7 +152,7 @@ function BasketStandings({
               </thead>
               <tbody>
                 {rows.map((r, i) => {
-                  const pos = r.rank ?? i + 1;
+                  const pos = i + 1;
                   const z = zoneFor(pos);
                   return (
                     <tr key={r.club} className={z ? `fb-z-${z.type}` : ""}>
