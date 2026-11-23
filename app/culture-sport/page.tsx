@@ -1,10 +1,14 @@
+
 // app/culture-sport/page.tsx
 import Link from "next/link";
+import Crumb from "../Crumb";
 
 export default function CultureSportPage() {
   return (
     <main>
       <div className="wrap">
+        <Crumb items={[{ label: "Culture & Sport" }]} fallbackHref="/" />
+
         <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: '3rem', margin: '30px 0', borderBottom: '2px solid var(--ink)', paddingBottom: '10px' }}>
           Culture & Sport
         </h1>

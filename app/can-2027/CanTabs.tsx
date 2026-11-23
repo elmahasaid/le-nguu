@@ -154,9 +154,14 @@ export default function CanTabs() {
 
         <div className="can-hero-inner">
           <div className="can-caf-emblem">
-            <span>🌍</span>
-            <strong>CAF</strong>
-          </div>
+  {/* Remplacer l'émoji par ton image. Vérifie le chemin exact ! */}
+  <img 
+    src="/can2027.png" 
+    alt="Logo CAF" 
+    style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+  />
+  
+</div>
 
           <div className="can-hero-title">
             <span className="can-eyebrow">FOOTBALL AFRICAIN</span>

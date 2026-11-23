@@ -72,14 +72,14 @@ export const BASKET_LEAGUES: Record<Island, BasketCategory[]> = {
       phase: "Classement provisoire",
       updated: "",
       table: `
-        Djabal Basket          | 13 | 12 |  1 | 0 | 25 | 953 | 706 |  247
-        Atomic Basket          | 13 | 10 |  3 | 0 | 23 | 680 | 590 |   90
-        Espoir des Comores     | 12 |  6 |  6 | 0 | 18 | 885 | 841 |   44
-        BCM                    | 13 |  5 |  8 | 0 | 18 | 751 | 824 |  -73
-        Papillon Bleu          | 12 |  6 |  6 | 1 | 17 | 750 | 756 |   -6
-        Lunos                  | 13 |  4 |  9 | 1 | 16 | 666 | 739 |  -73
-        ASD Dimadjou Itsandra  | 12 |  3 |  9 | 0 | 15 | 727 | 832 | -105
-        Enfants des Comores    | 12 |  4 |  8 | 1 | 15 | 627 | 751 | -124
+        Djabal Basket          | 14 | 13 |  1 | 0 | 27 | 1023 | 765 |  258
+        Atomic Basket          | 14 | 10 |  4 | 0 | 24 |  739 | 660 |   79
+        Espoir des Comores     | 13 |  6 |  7 | 0 | 19 |  968 | 941 |   27
+        Papillon Bleu          | 13 |  7 |  6 | 1 | 19 |  850 | 839 |   11
+        BCM                    | 13 |  5 |  8 | 0 | 18 |  751 | 824 |  -73
+        ASD Dimadjou Itsandra  | 13 |  4 |  9 | 0 | 17 |  790 | 893 | -103
+        Lunos                  | 13 |  4 |  9 | 1 | 16 |  666 | 739 |  -73
+        Enfants des Comores    | 13 |  4 |  9 | 1 | 16 |  688 | 814 | -126
       `,
       matches: `
         6e journée · phase retour | Sam. 14 nov. | ASD Dimadjou Itsandra | 74-76 | Papillon Bleu
@@ -108,7 +108,13 @@ export const BASKET_LEAGUES: Record<Island, BasketCategory[]> = {
     {
       label: "Dames",
       title: "Classement · Catégorie Dames",
-      table: ``,
+      table: `
+        Djabal Basket        | 7 | 5 | 2 | 0 | 12 | 500 | 232 |  268
+        Amisco               | 8 | 4 | 4 | 0 | 12 | 471 | 339 |  132
+        Espoir des Comores   | 6 | 5 | 1 | 0 | 11 | 353 | 215 |  138
+        Enfants des Comores  | 7 | 3 | 4 | 0 | 10 | 392 | 395 |   -3
+        Étoile du Sud        | 8 | 1 | 7 | 0 |  9 | 213 | 748 | -535
+      `,
       matches: `
         3e journée | Sam. 14 nov. | Étoile du Sud | 62-57 | Enfants des Comores
         3e journée | Sam. 14 nov. | Amisco        | 40-68 | Djabal Basket

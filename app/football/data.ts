@@ -18,6 +18,11 @@
 //    place de BM et BE, puis donnez les points et la différence de buts :
 //      Mrango Club | 4 | 3 | 1 | 0 | - | - | 10 | +6
 //    (les colonnes BM et BE disparaissent alors du tableau)
+//  → Si la différence de buts n'est pas connue non plus, mettez aussi un tiret
+//    en dernière colonne : la colonne Diff disparaît à son tour du tableau.
+//      Mrango Club | 5 | 3 | 1 | 1 | - | - | 10 | -
+//    Et si V, N, D ne sont pas connus non plus : des tirets partout.
+//      Étoile d'Or | 4 | - | - | - | - | - | 8 | -
 //  → La mention rouge « −1 » (match en moins) est désactivée. Pour l'afficher
 //    dans une division, ajoutez  showLate: true  dans cette division.
 //
@@ -102,29 +107,29 @@ export const LEAGUES: Record<Island, Division[]> = {
   ngazidja: [
     {
       label: "Division 1",
-      phase: "Classement J5",
-      updated: "18 novembre 2026",
+      phase: "Classement J6",
+      updated: "21 novembre 2026",
       table: `
-        Djabal FC          | 5 | 3 | 1 | 1 | 10 | 1
-        US Zilimadjou      | 5 | 3 | 1 | 1 | 5  | 3
-        FC Malé            | 5 | 2 | 2 | 1 | 7  | 5
-        Amical Club        | 4 | 2 | 1 | 1 | 6  | 4
-        FC Hantsindzi      | 5 | 2 | 1 | 2 | 5  | 4
-        Angelus Club       | 5 | 2 | 1 | 2 | 6  | 6
-        Elan Club          | 4 | 2 | 1 | 1 | 3  | 4
-        Volcan Club        | 5 | 2 | 0 | 3 | 3  | 5
-        Etoile des Comores | 5 | 1 | 2 | 2 | 8  | 9
-        Atomic Ngomé       | 5 | 1 | 2 | 2 | 5  | 6
-        FC Chouani         | 5 | 1 | 2 | 2 | 4  | 5
-        Fekandza Club      | 5 | 1 | 0 | 4 | 2  | 12
+        Djabal FC          | 6 | 3 | 2 | 1 | 11 | 2
+        US Zilimadjou      | 6 | 3 | 1 | 2 | 5  | 4
+        Elan Club          | 5 | 3 | 1 | 1 | 5  | 5
+        FC Malé            | 6 | 2 | 3 | 1 | 10 | 8
+        Volcan Club        | 6 | 3 | 0 | 3 | 4  | 5
+        Amical Club        | 5 | 2 | 2 | 1 | 7  | 5
+        FC Hantsindzi      | 6 | 2 | 2 | 2 | 8  | 7
+        Etoile des Comores | 6 | 2 | 2 | 2 | 10 | 10
+        Angelus Club       | 6 | 2 | 2 | 2 | 7  | 7
+        FC Chouani         | 6 | 1 | 3 | 2 | 5  | 6
+        Atomic Ngomé       | 6 | 1 | 2 | 3 | 6  | 8
+        Fekandza Club      | 6 | 1 | 0 | 5 | 3  | 14
       `,
       matches: `
-        6e journée | Sam. 21 nov. 15h00 | US Zilimadjou      | - | Volcan Club        | @Stade de Moroni
-        6e journée | Sam. 21 nov. 15h00 | Fekandza Club      | - | Etoile des Comores | @Stade de Madjeouéni
-        6e journée | Sam. 21 nov. 15h00 | Amical Club        | - | Djabal FC          | @Stade de Chezani
-        6e journée | Sam. 21 nov. 15h00 | FC Chouani         | - | Angelus Club       | @Stade de Nioumadzaha
-        6e journée | Sam. 21 nov. 15h00 | FC Malé            | - | FC Hantsindzi      | @Stade de Malé
-        6e journée | Sam. 21 nov. 15h00 | Atomic Ngomé       | - | Elan Club          | @Stade de Mitsamiouli
+        6e journée | Sam. 21 nov. | US Zilimadjou      | 0-1 | Volcan Club        | @Stade de Moroni
+        6e journée | Sam. 21 nov. | Fekandza Club      | 1-2 | Etoile des Comores | @Stade de Madjeouéni
+        6e journée | Sam. 21 nov. | Amical Club        | 1-1 | Djabal FC          | @Stade de Chezani
+        6e journée | Sam. 21 nov. | FC Chouani         | 1-1 | Angelus Club       | @Stade de Nioumadzaha
+        6e journée | Sam. 21 nov. | FC Malé            | 3-3 | FC Hantsindzi      | @Stade de Malé
+        6e journée | Sam. 21 nov. | Atomic Ngomé       | 1-2 | Elan Club          | @Stade de Mitsamiouli
         5e journée | Mer. 18 nov. | US Zilimadjou      | 1-0 | Atomic Ngomé       | @Stade de Moroni
         5e journée | Mer. 18 nov. | Etoile des Comores | 0-1 | Volcan Club        | @Stade de Nioumadzaha
         5e journée | Mer. 18 nov. | Djabal FC          | 6-0 | Fekandza Club      | @Stade d'Iconi
@@ -243,19 +248,19 @@ export const LEAGUES: Record<Island, Division[]> = {
   ndzuani: [
     {
       label: "Division 1",
-      phase: "Classement J4",
+      phase: "Classement J5",
       updated: "",
       table: `
-        Mrango Club     | 4 | 3 | 1 | 0 | - | - | 10 | +6
-        Hamumbu Club    | 4 | 3 | 0 | 1 | - | - |  9 | +7
-        Gombessa Sport  | 4 | 3 | 0 | 1 | - | - |  9 | +1
-        Chirazienne     | 4 | 2 | 2 | 0 | - | - |  8 | +3
-        AS Komorozine   | 4 | 1 | 2 | 1 | - | - |  5 | 0
-        Ngazi Sport     | 4 | 1 | 1 | 2 | - | - |  4 | -3
-        AS Singani      | 4 | 1 | 0 | 3 | - | - |  3 | -4
-        Beressé Club    | 4 | 0 | 3 | 1 | - | - |  3 | -4
-        Steal Nouvel    | 4 | 0 | 2 | 2 | - | - |  2 | -3
-        FC Djomakawe    | 4 | 0 | 1 | 3 | - | - |  1 | -3
+        Gombessa Sport  | 5 | 4 | 0 | 1 | - | - | 12 | -
+        Chirazienne     | 5 | 3 | 2 | 0 | - | - | 11 | -
+        Hamumbu Club    | 5 | 3 | 1 | 1 | - | - | 10 | -
+        Mrango Club     | 5 | 3 | 1 | 1 | - | - | 10 | -
+        AS Komorozine   | 5 | 1 | 3 | 1 | - | - |  6 | -
+        AS Singani      | 5 | 2 | 0 | 3 | - | - |  6 | -
+        Steal Nouvel    | 5 | 1 | 2 | 2 | - | - |  5 | -
+        Ngazi Sport     | 5 | 1 | 1 | 3 | - | - |  4 | -
+        Beressé Club    | 5 | 0 | 3 | 2 | - | - |  3 | -
+        FC Djomakawe    | 5 | 0 | 1 | 4 | - | - |  1 | -
       `,
       matches: `
         5e journée | Ven. 20 nov. 15h00 | Ngazi Sport | - | Chirazienne
@@ -269,25 +274,30 @@ export const LEAGUES: Record<Island, Division[]> = {
     },
     {
       label: "Division 2",
-      phase: "Classement",
+      phase: "Classement J4",
       updated: "",
       table: `
-        Étoile d'Or          | 3 | 0 | 0 | 0 | 0 | 0 | 7 | +4
-        Nouvel Vagues        | 2 | 0 | 0 | 0 | 0 | 0 | 6 | +2
-        Chavani Club         | 2 | 0 | 0 | 0 | 0 | 0 | 4 | +1
-        US Bambao            | 3 | 0 | 0 | 0 | 0 | 0 | 4 | +1
-        UJSM Simba           | 3 | 0 | 0 | 0 | 0 | 0 | 4 | +1
-        Ziarra Club          | 3 | 0 | 0 | 0 | 0 | 0 | 4 | +1
-        FC Ouani             | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0
-        Ensemble des Amis    | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0
-        Barakane Sport       | 2 | 0 | 0 | 0 | 0 | 0 | 3 | 0
-        AS Daoueni           | 1 | 0 | 0 | 0 | 0 | 0 | 2 | -1
-        Café Sport           | 3 | 0 | 0 | 0 | 0 | 0 | 1 | -2
-        JS Bazimini          | 3 | 0 | 0 | 0 | 0 | 0 | 0 | -1
-        FC Daoueni           | 2 | 0 | 0 | 0 | 0 | 0 | 0 | -3
+        Étoile d'Or          | 4 | - | - | - | - | - | 8 | -
+        Ensemble des Amis    | 4 | - | - | - | - | - | 6 | -
+        US Bambao            | 4 | - | - | - | - | - | 6 | -
+        Nouvel Vagues        | 3 | - | - | - | - | - | 6 | -
+        Chavani Club         | 4 | - | - | - | - | - | 6 | -
+        FC Daoueni           | 3 | - | - | - | - | - | 6 | -
+        Barakane Sport       | 3 | - | - | - | - | - | 4 | -
+        FC Ouani             | 3 | - | - | - | - | - | 4 | -
+        UJSM Simba           | 3 | - | - | - | - | - | 4 | -
+        JS Bazimini          | 4 | - | - | - | - | - | 3 | -
+        Ziarra Club          | 4 | - | - | - | - | - | 3 | -
+        AS Daoueni           | 3 | - | - | - | - | - | 2 | -
+        Café Sport           | 4 | - | - | - | - | - | 1 | -
       `,
       matches: ``,
-      zones: [],
+      zones: [
+        { from: 1, to: 2, type: "up", label: "Promus en Division 1" },
+        { from: 3, type: "up2", label: "Barrage de montée" },
+        { from: 11, type: "mid", label: "Barrage de maintien" },
+        { from: 12, to: 13, type: "down", label: "Relégation en Division 3" },
+      ],
     },
     blank("Division 3"),
   ],
@@ -298,21 +308,23 @@ export const LEAGUES: Record<Island, Division[]> = {
   mwali: [
     {
       label: "Division 1",
-      phase: "Classement J4",
+      phase: "Classement J5",
       updated: "",
       table: `
-        Fomboni FC        | 4 | 3 | 1 | 0 | - | - | 10 | +5
-        Étoile du Centre  | 3 | 2 | 1 | 0 | - | - |  7 | +3
-        Koukoulé FC       | 4 | 2 | 1 | 1 | - | - |  7 | +1
-        Ouragan Club      | 4 | 1 | 2 | 1 | - | - |  5 | 0
-        Belle Lumière     | 4 | 1 | 1 | 2 | - | - |  4 | -1
-        Mbatsé Club       | 4 | 0 | 3 | 1 | - | - |  3 | -2
-        Coca Bole         | 4 | 1 | 0 | 3 | - | - |  3 | -3
-        Sargonco          | 3 | 0 | 1 | 2 | - | - |  1 | -3
+        Fomboni FC        | 5 | 4 | 1 | 0 | - | - | 13 | +6
+        Étoile du Centre  | 4 | 3 | 1 | 0 | - | - | 10 | +7
+        Koukoulé FC       | 5 | 2 | 2 | 1 | - | - |  8 | +1
+        Ouragan Club      | 5 | 1 | 2 | 2 | - | - |  5 | -1
+        Mbatsé Club       | 5 | 0 | 4 | 1 | - | - |  4 | -2
+        Sargonco          | 4 | 1 | 1 | 2 | - | - |  4 | -2
+        Belle Lumière     | 5 | 1 | 1 | 3 | - | - |  4 | -5
+        Coca Bole         | 5 | 1 | 0 | 4 | - | - |  3 | -4
       `,
       matches: `
-        5e journée | Sam. 21 nov. 15h00 | Mbatsé Club | - | Koukoulé FC
-        5e journée | Sam. 21 nov. 15h00 | US Wanani   | - | Fomboni FC
+        5e journée | Sam. 21 nov. | Koukoulé FC       | 1-1 | Mbatsé Club
+        5e journée | Sam. 21 nov. | Coca Bole         | 0-1 | Fomboni FC
+        5e journée |              | Étoile du Centre  | 4-0 | Belle Lumière
+        5e journée |              | Sargonco          | 1-0 | Ouragan Club
       `,
       zones: [
         { from: 1, type: "up", label: "Champion" },
@@ -322,9 +334,20 @@ export const LEAGUES: Record<Island, Division[]> = {
     },
     {
       label: "Division 2",
-      phase: "5e journée",
-      updated: "18 novembre 2026",
-      table: ``,
+      phase: "Classement provisoire",
+      updated: "",
+      table: `
+        Chikabwe USH     | 6 | 4 | 0 | 2 | - | - | 12 | -
+        11 Rockets       | 6 | 3 | 1 | 2 | - | - | 10 | -
+        FC Itsamia       | 5 | 3 | 0 | 2 | - | - |  9 | -
+        Silex Club       | 5 | 2 | 2 | 1 | - | - |  8 | -
+        Onze Étoiles     | 5 | 1 | 4 | 0 | - | - |  7 | -
+        Kangani Sport    | 5 | 2 | 1 | 2 | - | - |  7 | -
+        Arsenal Club     | 5 | 1 | 3 | 1 | - | - |  6 | -
+        Wemani Espoir    | 5 | 1 | 3 | 1 | - | - |  6 | -
+        Juno Club        | 5 | 1 | 2 | 2 | - | - |  5 | -
+        Dynamique CM     | 5 | 0 | 0 | 5 | - | - |  0 | -
+      `,
       matches: `
         5e journée | Mer. 18 nov. | Chikabwe USH   | - | 11 Rockets
         5e journée | Mer. 18 nov. | Juno Club      | 0-1 | Silex Club | @Stade de Hoani
@@ -332,7 +355,12 @@ export const LEAGUES: Record<Island, Division[]> = {
         5e journée | Sam. 21 nov. | Kangani Sport  | - | Onze Étoiles
         5e journée | Dim. 22 nov. | Arsenal Club   | - | Wemani Espoir
       `,
-      zones: [],
+      zones: [
+        { from: 1, to: 2, type: "up", label: "Promus en Division 1" },
+        { from: 3, type: "up2", label: "Barrage de montée" },
+        { from: 8, type: "mid", label: "Barrage de maintien" },
+        { from: 9, to: 10, type: "down", label: "Relégation en Division 3" },
+      ],
     },
     blank("Division 3"),
   ],

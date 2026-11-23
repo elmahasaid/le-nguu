@@ -92,6 +92,12 @@ nav a,
 }
 .ar-back:hover { background: var(--ar-green); border-color: var(--ar-green); color: #ffffff; }
 
+/* Fil d'Ariane + bouton « Retour » sur les pages sport (Culture & Sport, football, basket, CAN) */
+.ar-crumb, .ar-back { --ar-green: #0f3d2e; --ar-line: #e5e7eb; --ar-mute: #6b7280; }
+.ar-crumb.pg { margin-bottom: 0; padding-top: 18px; }
+.ar-crumb-item { display: inline-flex; align-items: center; gap: 8px; }
+.ar-crumb-here { color: #1a1d21; font-weight: 600; }
+
 /* ----- Grille : article + colonne latérale ----- */
 .ar-grid {
   display: grid;
