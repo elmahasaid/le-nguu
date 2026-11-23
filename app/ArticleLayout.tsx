@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import WeatherWidget from "./WeatherWidget";
+import BackButton from "./BackButton";
 
 interface ArticleLayoutProps {
   category: string; // étiquette au-dessus du titre (ex. « Géopolitique »)
@@ -51,6 +52,7 @@ export default function ArticleLayout({
           <Link href="/">Accueil</Link>
           <span aria-hidden>›</span>
           <Link href={categoryHref}>{sectionName}</Link>
+          <BackButton fallbackHref={categoryHref} />
         </div>
 
         <div className="ar-grid">
@@ -95,23 +97,15 @@ export default function ArticleLayout({
           {/* ---------- COLONNE LATÉRALE ---------- */}
           <div className="ar-side" role="complementary" aria-label="Services et partenaires">
             <section className="ar-block">
-              <h2 className="ar-block-title">JUWU · SPORTSWEAR</h2>
-              <p className="ar-block-text">Affirme ton style, joue ton jeu.</p>
+              <h2 className="ar-block-title">Découvrez JUWU.FR</h2>
+              <p className="ar-block-text">La boutique en ligne des Comores.</p>
               <a
                 href="https://www.juwu.fr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ar-btn ar-btn-line"
               >
-                Découvrir la collection
-              </a>
-            </section>
-
-             <section className="ar-block">
-              <h2 className="ar-block-title">Soutenir Le Nguu</h2>
-              <p className="ar-block-text">Aidez-nous à rester indépendants.</p>
-              <a href="#" className="ar-btn ar-btn-solid">
-                Faire un don
+                Visiter la boutique
               </a>
             </section>
 
@@ -128,7 +122,13 @@ export default function ArticleLayout({
               </a>
             </section>
 
-           
+            <section className="ar-block">
+              <h2 className="ar-block-title">Soutenir Le Nguu</h2>
+              <p className="ar-block-text">Aidez-nous à rester indépendants.</p>
+              <a href="#" className="ar-btn ar-btn-solid">
+                Faire un don
+              </a>
+            </section>
 
             <WeatherWidget />
           </div>

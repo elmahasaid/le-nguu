@@ -12,6 +12,7 @@ export interface BasketStanding {
   pf: number | null; // points marqués, null si inconnu
   pa: number | null; // points encaissés, null si inconnu
   avg: number; // points average (marqués - encaissés)
+  rank: number | null; // rang imposé (facultatif), null = numérotation automatique
 }
 
 const SPLIT = /\t|\||;/; // séparateurs acceptés : | ou ; ou tabulation (copier-coller Excel)
@@ -21,13 +22,15 @@ const skip = (line: string) =>
 
 /**
  * Format d'une ligne (même ordre que le tableau Excel de la ligue) :
- *   Équipe | MJ | V | D | F | Pts | PM | PE | Moy
+ *   Équipe | MJ | V | D | F | Pts | PM | PE | Moy | Rang
  *
  * - F = forfaits (déjà comptés dans les défaites D).
  * - Pts, PM, PE et Moy sont facultatifs :
  *     Pts vide -> calculé : 2 points par victoire, 1 par défaite, 0 par forfait
  *     Moy vide -> calculée : PM - PE
  * - Si PM / PE sont inconnus, mettez un tiret et donnez la moyenne dans « Moy ».
+ * - Rang (facultatif) : à n'indiquer que si la numérotation saute une place
+ *   (ex. une équipe non communiquée) : le rang saisi remplace le numéro automatique.
  * La première ligne peut être un en-tête (Équipe | MJ | V …) : elle est ignorée.
  */
 export function parseBasketStandings(text: string): BasketStanding[] {
@@ -63,6 +66,7 @@ export function parseBasketStandings(text: string): BasketStanding[] {
       pf,
       pa,
       avg: num(8) ?? (pf !== null && pa !== null ? pf - pa : 0),
+      rank: num(9),
     });
   }
   return rows;
