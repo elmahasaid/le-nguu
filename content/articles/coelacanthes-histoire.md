@@ -1,8 +1,8 @@
 ---
-titre: "Les Coelacanthes : quand le football devient la seule nation qui tient debout"
+titre: "Les Cœlacanthes : quand le football devient la seule nation qui tient debout"
 soustitre: "De l’anonymat des Jeux des îles à l’exploit historique face au Ghana."
 rubrique: "Culture & Sport"
-categorie: "Culture & Sport"
+categorie: "Sport"
 chapeau: "Retour sur le parcours d’une sélection qui incarne la résilience et la fierté de tout un peuple."
 auteur: "La Rédaction"
 fonction: "Le Nguu"
@@ -13,7 +13,7 @@ legende: "Équipe de football des Comores. © Fédération de football des Comor
 
 ---
 
-Ils s’appellent Youssouf, Faïz, Warmed ou Rafiki. Ils sont nés à Marseille, à Paris, à Moroni ou à Iconi. Ils portent un maillot vert et un surnom hérité d’un poisson préhistorique. Et depuis quelques années, ils font vibrer un archipel de moins d’un million d’habitants comme aucun politique n’a jamais su le faire.
+Ils s’appellent Youssouf, El-Fradou, Kassim, Faïz, Warmed ou Rafiki. Ils sont nés à Marseille, à Paris, à Moroni, à Mayotte. Ils portent un maillot vert et un surnom hérité d’un poisson préhistorique appélé **Les Cœlacanthes**. Et depuis quelques années, ils font vibrer un archipel de moins d’un million d’habitants comme aucun politique n’a jamais su le faire.
 
 ## Un pays, un poisson, une identité
 
@@ -62,8 +62,7 @@ Au fil des années, certains noms sont devenus indissociables du maillot vert.
 - **El Fardou Ben Nabouhane** : Meilleur buteur de l’histoire de la sélection (20 réalisations). C’est lui qui a inscrit le premier but des Comores en phase finale de CAN, face au Ghana.
 - **Youssouf M’Changama** : Le meneur de jeu, le joueur le plus capé (74 sélections). Il incarne l’élégance et la vision de cette équipe.
 - **Ahmed Mogni** : Le héros de Garoua, reste dans les mémoires pour son doublé face aux Black Stars.
-- **Zaydou Youssouf** : Le métronome du milieu de terrain, celui par qui le jeu passe.
-- **Warmed Omari** : Défenseur formé à Rennes, devenu un cadre indispensable de la défense centrale.
+
 
 ## L’équipe d’aujourd’hui et les défis à venir
 

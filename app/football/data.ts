@@ -257,7 +257,7 @@ export const LEAGUES: Record<Island, Division[]> = {
   ndzuani: [
     {
       label: "Division 1",
-      phase: "Classement J5",
+      phase: "Programme J6",
       updated: "",
       table: `
         Gombessa Sport  | 5 | 4 | 0 | 1 | - | - | 12 | -
@@ -272,8 +272,13 @@ export const LEAGUES: Record<Island, Division[]> = {
         FC Djomakawe    | 5 | 0 | 1 | 4 | - | - |  1 | -
       `,
       matches: `
-        5e journée | Ven. 20 nov. 15h00 | Ngazi Sport | - | Chirazienne
-        5e journée | Sam. 21 nov. 15h00 | AS Singani  | - | Beressé Club
+        6e journée | Jeu. 26 nov. | Steal Nouvel    | - | Chirazienne    | @Sima Kavani 15h00
+        6e journée | Ven. 27 nov. | Beressé Club    | - | Ngazi Sport    | @Sima Kavani 15h00
+        6e journée | Sam. 28 nov. | FC Djomakawe    | - | AS Singani     | @Sima Kavani 15h00
+        6e journée | Sam. 28 nov. | Chirazienne     | - | Gombessa Sport | @Domoni 15h00
+        6e journée | Dim. 29 nov. | FC Djomakawe    | - | Hamumbu Club   | @Sima Kavani 15h00
+        5e journée | Ven. 20 nov. | Ngazi Sport     | - | Chirazienne
+        5e journée | Sam. 21 nov. | AS Singani      | - | Beressé Club
       `,
       zones: [
         { from: 1, type: "up", label: "Champion" },
@@ -283,22 +288,22 @@ export const LEAGUES: Record<Island, Division[]> = {
     },
     {
       label: "Division 2",
-      phase: "Classement J4",
+      phase: "Classement J5",
       updated: "",
       table: `
-        Étoile d'Or          | 4 | - | - | - | - | - | 8 | -
-        Ensemble des Amis    | 4 | - | - | - | - | - | 6 | -
-        US Bambao            | 4 | - | - | - | - | - | 6 | -
-        Nouvel Vagues        | 3 | - | - | - | - | - | 6 | -
-        Chavani Club         | 4 | - | - | - | - | - | 6 | -
-        FC Daoueni           | 3 | - | - | - | - | - | 6 | -
-        Barakane Sport       | 3 | - | - | - | - | - | 4 | -
-        FC Ouani             | 3 | - | - | - | - | - | 4 | -
-        UJSM Simba           | 3 | - | - | - | - | - | 4 | -
-        JS Bazimini          | 4 | - | - | - | - | - | 3 | -
-        Ziarra Club          | 4 | - | - | - | - | - | 3 | -
-        AS Daoueni           | 3 | - | - | - | - | - | 2 | -
-        Café Sport           | 4 | - | - | - | - | - | 1 | -
+        Étoile d'Or             | 5 | 3 | 2 | 0 | 9  | 4  | 11
+        Ensemble des Amis       | 5 | 2 | 3 | 0 | 9  | 6  | 9
+        US Bambao               | 5 | 2 | 3 | 0 | 6  | 3  | 9
+        Nouvelle Vague           | 4 | 3 | 0 | 1 | 4  | 2  | 9
+        Barakane Sport          | 4 | 2 | 1 | 1 | 8  | 7  | 7
+        Chavani Club            | 4 | 1 | 3 | 0 | 1  | 0  | 6
+        FC Daoueni              | 4 | 2 | 0 | 2 | 4  | 5  | 6
+        UJSM Simba              | 3 | 1 | 1 | 1 | 3  | 3  | 4
+        FC Ouani                | 4 | 1 | 1 | 2 | 4  | 5  | 4
+        JS Bazimini             | 4 | 0 | 3 | 1 | 4  | 5  | 3
+        Ziarra Club             | 5 | 1 | 0 | 4 | 6  | 10 | 3
+        AS Daoueni              | 4 | 0 | 2 | 2 | 3  | 5  | 2
+        Café Sport              | 5 | 0 | 1 | 4 | 3  | 9  | 1
       `,
       matches: ``,
       zones: [
