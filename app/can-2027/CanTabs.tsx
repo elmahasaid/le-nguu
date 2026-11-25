@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -154,14 +153,16 @@ export default function CanTabs() {
 
         <div className="can-hero-inner">
           <div className="can-caf-emblem">
-  {/* Remplacer l'émoji par ton image. Vérifie le chemin exact ! */}
-  <img 
-    src="/can2027.png" 
-    alt="Logo CAF" 
-    style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
-  />
-  
-</div>
+            {/* L'image est placée à l'intérieur du span pour garder le cercle jaune */}
+            <span>
+              <img 
+                src="/can2027.png" 
+                alt="Logo CAF" 
+                style={{ width: '80%', height: '80%', objectFit: 'contain' }} 
+              />
+            </span>
+            <strong>CAF</strong>
+          </div>
 
           <div className="can-hero-title">
             <span className="can-eyebrow">FOOTBALL AFRICAIN</span>

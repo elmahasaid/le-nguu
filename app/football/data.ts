@@ -393,6 +393,22 @@ export const REGIONAL_CUPS: Record<Island, string> = {
     Phase éliminatoire D2 | Dim. 8 nov. | Kaz Club            | 1-1 | Ngaya Club  | 3-4
     Phase éliminatoire D2 | Dim. 8 nov. | Alizé Fort          | 3-2 | JACM
     Phase éliminatoire D2 | Dim. 8 nov. | FC Mlaouni          | 1-1 | FC Mdjoiezi | 4-3
+    16es de finale | Sam. 28 nov. | Etoile des Comores | - | Fekandza Club | @Nioumadzaha 15h00
+    16es de finale | Sam. 28 nov. | Angelus Club       | - | Volcan Club   | @Moindzaza 15h00
+    16es de finale | Sam. 28 nov. | FC Mdjihari       | - | FC Chouani    | @Mbeni 15h00
+    16es de finale | Sam. 28 nov. | Hahaya FC         | - | Amical Club   | @Hahaya 15h00
+    16es de finale | Sam. 28 nov. | FC Iconi          | - | Atomic Ngomé  | @Iconi 15h00
+    16es de finale | Sam. 28 nov. | Coin Nord         | - | Asim Club     | @Mitsamiouli 15h00
+    16es de finale | Sam. 28 nov. | Etoile du Sud     | - | Alizé Fort    | @Foumbouni 15h00
+    16es de finale | Dim. 29 nov. | US Selea          | - | Elan Club     | @Nioumadzaha 15h00
+    16es de finale | Dim. 29 nov. | FC Mtsamdou       | - | Djabal FC     | @Mtsamdou 15h00
+    16es de finale | Dim. 29 nov. | FC Mvoumbari      | - | Mlaouni Club  | @Foumbouni 15h00
+    16es de finale | Dim. 29 nov. | FC Garde Score    | - | Enfants des Comores | @Itsinkoudi 15h00
+    16es de finale | Dim. 29 nov. | US Ntsaoueni      | - | Avenir Club   | @Mitsamiouli 15h00
+    16es de finale | Dim. 29 nov. | Maloudja Club     | - | Twamaya Club  | @Gnambeni 15h00
+    16es de finale | Dim. 29 nov. | Petit Harlem      | - | US Zilimadjou | @Ouroveni 15h00
+    16es de finale | Dim. 29 nov. | Ngaya Club        | - | FC Hantsindzi | @Moroni 15h00
+    16es de finale | Dim. 29 nov. | FC Panga          | - | FC Malé       | @Mitsoudjé 15h00
   `,
   ndzuani: ``,
   mwali: ``,

@@ -1,14 +1,14 @@
 ---
 titre: "Les Coelacanthes : quand le football devient la seule nation qui tient debout"
 soustitre: "De l’anonymat des Jeux des îles à l’exploit historique face au Ghana."
-rubrique: "Sport"
+rubrique: "Culture & Sport"
 categorie: "Sport"
-chapeau: "De l’anonymat des Jeux des îles à l’exploit historique face au Ghana, retour sur le parcours d’une sélection qui incarne la résilience et la fierté de tout un peuple."
+chapeau: "Retour sur le parcours d’une sélection qui incarne la résilience et la fierté de tout un peuple."
 auteur: "La Rédaction"
 fonction: "Le Nguu"
 date: "2026-11-17T10:00"
 image: "/coelacanthes.png"
-legende: "L'ambiance dans les tribunes lors de la rencontre entre les Comores et le Sénégal. Une ferveur unique pour les Coelacanthes. / Le Nguu"
+legende: "L'ambiance dans les tribunes lors de la rencontre entre les Comores et le Sénégal. Une ferveur unique pour les Coelacanthes."
 credit: "Le Nguu"
 une: true
 ---
