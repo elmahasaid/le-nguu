@@ -169,29 +169,38 @@ export const LEAGUES: Record<Island, Division[]> = {
     },
     {
       label: "Division 2",
-      phase: "Classement J5",
-      updated: "20 novembre 2026",
+      phase: "Classement J6",
+      updated: "25 novembre 2026",
       table: `
-        Ngaya Club          | 5 | 4 | 0 | 1 | 10 | 5
-        Alizé Fort          | 5 | 3 | 2 | 0 | 9  | 4
-        US Mbeni            | 5 | 3 | 2 | 0 | 7  | 3
-        Petit Harlem        | 5 | 3 | 1 | 1 | 9  | 4
-        FC Mtsamdou         | 5 | 2 | 3 | 0 | 4  | 1
-        JACM                | 5 | 2 | 2 | 1 | 9  | 5
-        AJSD Club           | 5 | 2 | 1 | 2 | 9  | 4
-        Twamaya Club        | 5 | 2 | 1 | 2 | 6  | 7
-        US Selea            | 5 | 2 | 1 | 2 | 7  | 8
-        Avenir Club         | 5 | 2 | 1 | 2 | 6  | 8
-        Enfants des Comores | 5 | 2 | 0 | 3 | 5  | 7
-        Asim Club           | 5 | 2 | 0 | 3 | 7  | 11
-        FC Mvoumbari        | 5 | 1 | 2 | 2 | 5  | 5
-        Kaz Club            | 5 | 1 | 2 | 2 | 7  | 10
-        FC Mlaouni          | 5 | 1 | 1 | 3 | 3  | 6
-        Dynamo Club Chamlé  | 5 | 1 | 1 | 3 | 3  | 8
-        Coin Nord           | 5 | 0 | 2 | 3 | 4  | 9
-        FC Mdjoiezi         | 5 | 0 | 2 | 3 | 3  | 8
+        Ngaya Club          | 6 | 4 | 0 | 2 | 11 | 7
+        Alizé Fort          | 6 | 4 | 2 | 0 | 11 | 5
+        US Mbeni            | 6 | 4 | 2 | 0 | 11 | 4
+        Petit Harlem        | 6 | 4 | 1 | 1 | 12 | 4
+        FC Mtsamdou         | 6 | 3 | 3 | 0 | 6  | 2
+        JACM                | 6 | 2 | 3 | 1 | 11 | 7
+        AJSD Club           | 6 | 2 | 2 | 2 | 11 | 6
+        Avenir Club         | 6 | 3 | 1 | 2 | 7  | 8
+        Twamaya Club        | 6 | 2 | 1 | 3 | 6  | 10
+        US Selea            | 6 | 2 | 1 | 3 | 8  | 12
+        Enfants des Comores | 6 | 3 | 0 | 3 | 8  | 8
+        FC Mvoumbari        | 6 | 2 | 2 | 2 | 7  | 6
+        Asim Club           | 6 | 2 | 0 | 4 | 8  | 13
+        FC Mlaouni          | 6 | 1 | 1 | 4 | 4  | 9
+        Kaz Club            | 6 | 1 | 3 | 2 | 7  | 10
+        Dynamo Club Chamlé  | 6 | 1 | 1 | 4 | 4  | 10
+        Coin Nord           | 6 | 0 | 2 | 4 | 4  | 10
+        FC Mdjoiezi         | 6 | 0 | 3 | 3 | 3  | 8
       `,
       matches: `
+        6e journée | Mer. 25 nov. | Kaz Club            | 0-0 | FC Mdjoiezi         | @Stade de Mitsoudjé
+        6e journée | Mer. 25 nov. | Coin Nord           | 0-1 | Avenir Club         | @Stade de Mitsamiouli
+        6e journée | Mer. 25 nov. | Petit Harlem        | 3-0 | Twamaya Club        | @Stade de Moroni
+        6e journée | Mer. 25 nov. | JACM                | 2-2 | AJSD Club           | @Stade de Nioumadzaha
+        6e journée | Mer. 25 nov. | Alizé Fort          | 2-1 | Asim Club           | @Stade de Moindzaza
+        6e journée | Mer. 25 nov. | Ngaya Club          | 1-2 | FC Mtsamdou         | @Stade de Madjeouéni
+        6e journée | Mer. 25 nov. | FC Mlaouni          | 1-3 | Enfants des Comores | @Stade de Malé
+        6e journée | Mer. 25 nov. | Dynamo Club Chamlé  | 1-2 | FC Mvoumbari        | @Stade de Mitsamiouli
+        6e journée | Mer. 25 nov. | US Mbeni            | 4-1 | US Selea            | @Stade de Mbeni
         5e journée | Jeu. 19 nov. | Avenir Club         | 1-1 | US Mbeni            | @Stade de Chindini
         5e journée | Jeu. 19 nov. | Twamaya Club        | 0-0 | FC Mlaouni          | @Stade de Mvouni
         5e journée | Jeu. 19 nov. | Enfants des Comores | 0-2 | JACM                | @Stade de Moindzaza
@@ -308,8 +317,8 @@ export const LEAGUES: Record<Island, Division[]> = {
   mwali: [
     {
       label: "Division 1",
-      phase: "Classement J5",
-      updated: "",
+      phase: "Classement J6",
+      updated: "28 novembre 2026",
       table: `
         Fomboni FC        | 5 | 4 | 1 | 0 | - | - | 13 | +6
         Étoile du Centre  | 4 | 3 | 1 | 0 | - | - | 10 | +7
@@ -321,6 +330,10 @@ export const LEAGUES: Record<Island, Division[]> = {
         Coca Bole         | 5 | 1 | 0 | 4 | - | - |  3 | -4
       `,
       matches: `
+        6e journée | Sam. 28 nov. | Belle Lumière     | - | Coca Bole           | @Stade de Djioezi 15h00
+        6e journée | Sam. 28 nov. | Fomboni FC        | - | Étoile du Centre    | @Stade de El Hadj Matoir 15h00
+        6e journée | Dim. 29 nov. | Koukoulé FC       | - | Sargonco            | @Stade de Ndronroni 15h00
+        6e journée | Dim. 29 nov. | Ouragan Club      | - | Mbatsé Club         | @Stade de Boingoma 15h00
         5e journée | Sam. 21 nov. | Koukoulé FC       | 1-1 | Mbatsé Club
         5e journée | Sam. 21 nov. | Coca Bole         | 0-1 | Fomboni FC
         5e journée |              | Étoile du Centre  | 4-0 | Belle Lumière
@@ -402,7 +415,7 @@ export const REGIONAL_CUPS: Record<Island, string> = {
     16es de finale | Sam. 28 nov. | Etoile du Sud     | - | Alizé Fort    | @Foumbouni 15h00
     16es de finale | Dim. 29 nov. | US Selea          | - | Elan Club     | @Nioumadzaha 15h00
     16es de finale | Dim. 29 nov. | FC Mtsamdou       | - | Djabal FC     | @Mtsamdou 15h00
-    16es de finale | Dim. 29 nov. | FC Mvoumbari      | - | Mlaouni Club  | @Foumbouni 15h00
+    16es de finale | Dim. 29 nov. | FC Mvoumbari      | - | FC Mlaouni    | @Foumbouni 15h00
     16es de finale | Dim. 29 nov. | FC Garde Score    | - | Enfants des Comores | @Itsinkoudi 15h00
     16es de finale | Dim. 29 nov. | US Ntsaoueni      | - | Avenir Club   | @Mitsamiouli 15h00
     16es de finale | Dim. 29 nov. | Maloudja Club     | - | Twamaya Club  | @Gnambeni 15h00

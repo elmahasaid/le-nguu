@@ -2,15 +2,15 @@
 titre: "Les Coelacanthes : quand le football devient la seule nation qui tient debout"
 soustitre: "De l’anonymat des Jeux des îles à l’exploit historique face au Ghana."
 rubrique: "Culture & Sport"
-categorie: "Sport"
+categorie: "Culture & Sport"
 chapeau: "Retour sur le parcours d’une sélection qui incarne la résilience et la fierté de tout un peuple."
 auteur: "La Rédaction"
 fonction: "Le Nguu"
 date: "2026-11-17T10:00"
 image: "/coelacanthes.png"
-legende: "L'ambiance dans les tribunes lors de la rencontre entre les Comores et le Sénégal. Une ferveur unique pour les Coelacanthes."
-credit: "Le Nguu"
-une: true
+legende: "Équipe de football des Comores. © Fédération de football des Comores (FFC)"
+
+
 ---
 
 Ils s’appellent Youssouf, Faïz, Warmed ou Rafiki. Ils sont nés à Marseille, à Paris, à Moroni ou à Iconi. Ils portent un maillot vert et un surnom hérité d’un poisson préhistorique. Et depuis quelques années, ils font vibrer un archipel de moins d’un million d’habitants comme aucun politique n’a jamais su le faire.
